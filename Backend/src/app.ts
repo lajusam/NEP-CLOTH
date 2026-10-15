@@ -14,16 +14,33 @@ import { errorHandler } from "./middleware/errorHandler.js";
 const app = express();
 
 app.use(helmet());
-app.use(cors({ origin: env.FRONTEND_ORIGIN }));
+const allowedOrigins = env.FRONTEND_ORIGIN.split(",").map((s) => s.trim());
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin) || origin.endsWith(".vercel.app")) {
+        return callback(null, true);
+      }
+      return callback(null, true);
+    },
+    credentials: true,
+  })
+);
 app.use(express.json());
 
-app.use("/health", healthRouter);
-app.use("/products", productsRouter);
-app.use("/auth", authRouter);
-app.use("/", reviewsRouter);
-app.use("/admin/reviews", adminReviewsRouter);
-app.use("/orders", ordersRouter);
-app.use("/admin", adminRouter);
+// Group API routes
+const apiRouter = express.Router();
+apiRouter.use("/health", healthRouter);
+apiRouter.use("/products", productsRouter);
+apiRouter.use("/auth", authRouter);
+apiRouter.use("/admin/reviews", adminReviewsRouter);
+apiRouter.use("/orders", ordersRouter);
+apiRouter.use("/admin", adminRouter);
+apiRouter.use("/", reviewsRouter);
+
+// Mount under both /api and root to guarantee compatibility with all proxy & rewrite rules
+app.use("/api", apiRouter);
+app.use("/", apiRouter);
 
 app.use((_req, res) => {
   res.status(404).json({ error: "Route not found" });
