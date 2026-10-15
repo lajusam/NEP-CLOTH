@@ -1,0 +1,250 @@
+/* ==========================================================================
+   WOMEN'S HERO SECTION STYLES
+   Cinematic editorial lockup with serif quote & soft gradient overlay.
+   Stack: React / Next.js + GSAP + Plain CSS
+   ========================================================================== */
+
+/* ── FONT IMPORT ─────────────────────────────────────────────────────────── */
+/* Cormorant Garamond — elegant serif with italic weights 300–500.
+   Fallback: Playfair Display, then generic serif. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+/* ── 1. WRAPPER CONTAINER ────────────────────────────────────────────────── */
+.women-hero-wrapper {
+  /* Controls coordinate reference: allows absolutely positioned text */
+  position: relative;
+
+  /* Controls width: spans 100% of parent */
+  width: 100%;
+
+  /* Controls aspect ratio: 16 / 9 matching ~1376×768 image */
+  aspect-ratio: 16 / 9;
+
+  /* Controls overflow: hides scale-zoom and text slide effects */
+  overflow: hidden;
+
+  /* Controls container query context: 1cqw = 1% of this wrapper width */
+  container-type: inline-size;
+
+  /* Controls base background: solid black to prevent flash before image loads */
+  background: #000;
+}
+
+/* ── 2. BACKGROUND IMAGE ─────────────────────────────────────────────────── */
+.women-hero-img {
+  /* Controls width: fills 100% of wrapper width */
+  width: 100%;
+
+  /* Controls height: fills 100% of wrapper height */
+  height: 100%;
+
+  /* Controls image fit: covers container without letterboxing */
+  object-fit: cover;
+
+  /* Controls display: block to remove inline whitespace gap */
+  display: block;
+
+  /* Controls initial scale: starts zoomed in at 1.12 for cinematic reveal */
+  transform: scale(1.12);
+
+  /* Controls initial opacity: starts invisible */
+  opacity: 0;
+
+  /* Controls initial blur + brightness: dreamy fade-in effect */
+  filter: blur(12px) brightness(0.6);
+
+  /* Optimizes GPU layer for transform, opacity, and filter transitions */
+  will-change: transform, opacity, filter;
+}
+
+/* ── 3. GRADIENT OVERLAY ─────────────────────────────────────────────────── */
+.women-hero-gradient {
+  /* Controls position: stretches across entire wrapper */
+  position: absolute;
+  inset: 0;
+
+  /* Controls stacking: sits above image but below text (z-index: 1) */
+  z-index: 1;
+
+  /* Controls gradient: dark left side for text readability, transparent right */
+  background: linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 45%);
+
+  /* Controls interactivity: invisible to mouse events */
+  pointer-events: none;
+}
+
+/* ── 4. QUOTE TEXT BLOCK (top-left) ──────────────────────────────────────── */
+.women-hero-quote {
+  /* Controls position type: anchored over the image */
+  position: absolute;
+
+  /* Controls horizontal placement: 6% from left edge */
+  left: 6%;
+
+  /* Controls vertical placement: 9% from top edge (dark area above railing) */
+  top: 9%;
+
+  /* Controls text block width: 38% of container width */
+  width: 38%;
+
+  /* Controls text color: warm ivory #F5EFE6, matching the dress tone */
+  color: #F5EFE6;
+
+  /* Controls line-height: tight 1.05 for elegant serif stacking */
+  line-height: 1.05;
+
+  /* Controls stacking order: above gradient overlay */
+  z-index: 2;
+
+  /* Controls font family: Cormorant Garamond italic */
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+
+  /* Controls font style: italic for editorial elegance */
+  font-style: italic;
+
+  /* Smooth font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── QUOTE LINE 1: "If you fall," ────────────────────────────────────────── */
+.women-hero-quote-line1 {
+  /* Controls display: block level for independent line */
+  display: block;
+
+  /* Controls font size: 3.6% of container width */
+  font-size: 3.6cqw;
+
+  /* Controls font weight: regular 400 */
+  font-weight: 400;
+
+  /* Controls letter spacing: subtle 0.005em tracking */
+  letter-spacing: 0.005em;
+
+  /* Controls wrapping: keep on exactly 1 line */
+  white-space: nowrap;
+}
+
+/* ── QUOTE LINE 2: "fall in NEP-CLOTH." ──────────────────────────────────── */
+.women-hero-quote-line2 {
+  /* Controls display: block level for independent line */
+  display: block;
+
+  /* Controls font size: 4.4% of container width (larger for emphasis) */
+  font-size: 4.4cqw;
+
+  /* Controls font weight: medium 500 (heavier for emphasis) */
+  font-weight: 500;
+
+  /* Controls vertical spacing from Line 1: 0.3% of container width */
+  margin-top: 0.3cqw;
+
+  /* Controls indent: 4% padding-left for staircase-step visual rhythm */
+  padding-left: 4cqw;
+
+  /* Controls wrapping: keep on exactly 1 line */
+  white-space: nowrap;
+
+  /* Controls letter spacing: subtle 0.005em tracking */
+  letter-spacing: 0.005em;
+}
+
+/* ── QUOTE RULE (thin decorative line under quote) ───────────────────────── */
+.women-hero-rule {
+  /* Controls width: 6% of container width */
+  width: 6cqw;
+
+  /* Controls height: 1px thin line */
+  height: 1px;
+
+  /* Controls color: warm ivory matching the quote text */
+  background: #F5EFE6;
+
+  /* Controls vertical spacing from Line 2: 1.6% of container width */
+  margin-top: 1.6cqw;
+
+  /* Controls transform origin: draws from left to right via scaleX */
+  transform-origin: left center;
+
+  /* Controls stacking: above gradient */
+  position: relative;
+  z-index: 2;
+}
+
+/* ── 5. BRAND MARK (bottom-right) ────────────────────────────────────────── */
+.women-hero-brand {
+  /* Controls position type: anchored at bottom-right */
+  position: absolute;
+
+  /* Controls horizontal placement: 4% from right edge */
+  right: 4%;
+
+  /* Controls vertical placement: 3.5% from bottom edge (above stage lights) */
+  bottom: 3.5%;
+
+  /* Controls text color: warm ivory */
+  color: #F5EFE6;
+
+  /* Controls transparency: slightly muted to be quiet / non-distracting */
+  opacity: 0.9;
+
+  /* Controls stacking: above gradient */
+  z-index: 2;
+
+  /* Controls font family: Cormorant Garamond for brand consistency */
+  font-family: 'Cormorant Garamond', 'Inter', sans-serif;
+
+  /* Controls font weight: medium 500 */
+  font-weight: 500;
+
+  /* Controls font size: 1.15% of container width (small and quiet) */
+  font-size: 1.15cqw;
+
+  /* Controls letter spacing: wide 0.45em for architectural brand feel */
+  letter-spacing: 0.45em;
+
+  /* Controls capitalization: uppercase brand mark */
+  text-transform: uppercase;
+
+  /* Controls font style: normal (not italic, unlike the quote) */
+  font-style: normal;
+}
+
+/* ── 6. WORD SPANS (for GSAP word-level animation) ───────────────────────── */
+.women-hero-word {
+  /* Controls display: inline-block so GSAP transforms apply per-word */
+  display: inline-block;
+
+  /* Optimizes rendering during GSAP animation */
+  will-change: transform, opacity, filter;
+}
+
+/* ── 7. ACCESSIBILITY: PREFERS REDUCED MOTION ────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .women-hero-img {
+    /* Skip blur/scale/fade animation, show final settled image */
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    filter: none !important;
+    will-change: auto;
+  }
+
+  .women-hero-word {
+    /* Skip word-level slide animation */
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    will-change: auto;
+  }
+
+  .women-hero-rule {
+    /* Skip line-draw animation */
+    transform: scaleX(1) !important;
+  }
+
+  .women-hero-brand {
+    /* Skip brand fade animation */
+    opacity: 0.9 !important;
+    letter-spacing: 0.45em !important;
+  }
+}

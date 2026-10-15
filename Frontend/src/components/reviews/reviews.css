@@ -1,0 +1,158 @@
+.reviews-section { width: 100%; padding: clamp(64px, 9vw, 128px) 0; background: white; color: black; }
+.reviews-container { width: min(1280px, calc(100% - 64px)); margin: 0 auto; min-width: 0; }
+.reviews-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding-bottom: 20px; border-bottom: 1px solid black; }
+.reviews-eyebrow, .review-dialog-eyebrow { display: block; font: 500 10px/1.4 'Satoshi', sans-serif; letter-spacing: .22em; text-transform: uppercase; }
+.reviews-heading h2 { margin: 0; font: 400 clamp(42px, 6vw, 72px)/.9 'Bebas Neue', sans-serif; letter-spacing: .015em; }
+.reviews-summary { display: grid; grid-template-columns: minmax(170px, .75fr) minmax(240px, 1.25fr); gap: clamp(32px, 8vw, 120px); align-items: center; padding: 38px 0; border-bottom: 1px solid black; }
+.reviews-summary-score { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.reviews-summary-score > strong { font: 400 clamp(62px, 9vw, 104px)/.82 'Bebas Neue', sans-serif; }
+.reviews-summary-score > span:last-child { font: 500 10px/1.5 'Satoshi', sans-serif; letter-spacing: .16em; }
+.review-stars { display: inline-flex; align-items: center; gap: 2px; color: black; vertical-align: middle; }
+.review-stars svg { width: 17px; height: 17px; flex: none; }
+.product-review-summary-link { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 9px; margin: 0 0 22px; color: black; font: 500 10px/1.4 'Satoshi', sans-serif; letter-spacing: .12em; text-decoration: none; }
+.product-review-summary-link:hover span:last-child { text-decoration: underline; text-underline-offset: 3px; }
+.storefront-product-rating { display: flex; align-items: center; gap: 6px; margin-top: 7px; font: 400 10px/1.4 'Satoshi', sans-serif; letter-spacing: .03em; }
+.storefront-product-rating .review-stars { gap: 1px; }
+.storefront-product-rating .review-stars svg { width: 12px; height: 12px; }
+.related-product-rating { display: flex; align-items: center; gap: 5px; margin-top: 5px; font: 400 10px/1.4 'Satoshi', sans-serif; letter-spacing: .03em; }
+.related-product-rating .review-stars svg { width: 12px; height: 12px; }
+.reviews-summary-score .review-stars svg { width: 21px; height: 21px; }
+.reviews-distribution { display: flex; flex-direction: column; gap: 9px; }
+.review-distribution-row { display: grid; grid-template-columns: 54px minmax(80px, 1fr) 34px; gap: 12px; align-items: center; font: 500 10px/1.2 'Satoshi', sans-serif; letter-spacing: .06em; }
+.review-distribution-track { height: 5px; background: color-mix(in srgb, black 12%, white); overflow: hidden; }
+.review-distribution-track > span { display: block; height: 100%; background: black; transform-origin: left center; }
+.reviews-list-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 30px 0 16px; }
+.reviews-list-heading h3, .review-write-area h3 { margin: 0; font: 500 12px/1.4 'Satoshi', sans-serif; letter-spacing: .16em; }
+.reviews-list-heading h3 span { color: color-mix(in srgb, black 55%, white); }
+.reviews-list-heading label { display: flex; align-items: center; gap: 9px; font: 500 10px/1.3 'Satoshi', sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.reviews-list-heading select, .review-dialog-field select, .review-dialog-field textarea { min-height: 42px; max-width: 100%; border: 1px solid black; border-radius: 0; background: white; color: black; padding: 9px 12px; font: 400 12px/1.5 'Satoshi', sans-serif; }
+.reviews-list { display: grid; grid-template-columns: 1fr; }
+.review-card { min-width: 0; padding: 24px 0 26px; border-top: 1px solid color-mix(in srgb, black 22%, white); overflow-wrap: anywhere; }
+.review-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.review-card-top > div:first-child { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.review-verified { padding: 5px 7px; border: 1px solid black; font: 500 9px/1.2 'Satoshi', sans-serif; letter-spacing: .13em; }
+.review-card h4 { margin: 17px 0 7px; font: 600 15px/1.45 'Satoshi', sans-serif; }
+.review-card-body { margin: 14px 0 0; font: 400 14px/1.8 'Satoshi', sans-serif; overflow-wrap: anywhere; white-space: pre-wrap; }
+.review-card-body.is-collapsed { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.review-read-more, .review-report-link { margin-top: 8px; padding: 0; border: 0; background: transparent; color: black; font: 600 9px/1.5 'Satoshi', sans-serif; letter-spacing: .16em; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.review-card footer { display: flex; justify-content: space-between; gap: 16px; margin-top: 18px; font: 500 10px/1.5 'Satoshi', sans-serif; letter-spacing: .05em; }
+.review-card footer span { color: color-mix(in srgb, black 58%, white); text-align: right; }
+.review-card footer em { font-style: normal; letter-spacing: .11em; }
+.review-store-reply { margin: 20px 0 0; padding: 17px 20px; border-left: 2px solid black; background: color-mix(in srgb, black 4%, white); }
+.review-store-reply > span { font: 600 9px/1.4 'Satoshi', sans-serif; letter-spacing: .16em; }
+.review-store-reply p { margin: 9px 0 6px; font: 400 13px/1.7 'Satoshi', sans-serif; white-space: pre-wrap; overflow-wrap: anywhere; }
+.review-store-reply small { font: 400 10px/1.4 'Satoshi', sans-serif; color: color-mix(in srgb, black 58%, white); }
+.review-report-menu { position: relative; }
+.review-report-menu summary { list-style: none; width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid transparent; font: 700 16px/1 'Satoshi', sans-serif; letter-spacing: .12em; cursor: pointer; }
+.review-report-menu summary::-webkit-details-marker { display: none; }
+.review-report-menu[open] summary, .review-report-menu summary:hover { border-color: black; }
+.review-report-menu > div { position: absolute; z-index: 2; top: 42px; right: 0; min-width: 150px; border: 1px solid black; background: white; }
+.review-report-menu button { width: 100%; min-height: 42px; padding: 10px; border: 0; background: white; color: black; font: 600 9px/1.4 'Satoshi', sans-serif; letter-spacing: .12em; text-align: left; cursor: pointer; }
+.review-report-menu button:hover:not(:disabled) { background: black; color: white; }
+.review-report-menu button:disabled { color: color-mix(in srgb, black 48%, white); cursor: not-allowed; }
+.reviews-empty { padding: 38px 0; border-top: 1px solid color-mix(in srgb, black 22%, white); }
+.reviews-empty strong { font: 500 12px/1.5 'Satoshi', sans-serif; letter-spacing: .16em; }
+.reviews-empty p, .review-eligibility-message { margin: 8px 0 0; font: 400 13px/1.7 'Satoshi', sans-serif; color: color-mix(in srgb, black 65%, white); }
+.reviews-load-more { display: block; min-height: 48px; margin: 24px auto 0; padding: 0 24px; border: 1px solid black; background: white; color: black; font: 600 10px/1 'Satoshi', sans-serif; letter-spacing: .17em; cursor: pointer; }
+.reviews-load-more:hover:not(:disabled) { background: black; color: white; }
+.reviews-load-more:disabled, .review-submit-button:disabled { opacity: .5; cursor: wait; }
+.review-write-area { margin-top: 52px; padding: 28px; border: 1px solid black; }
+.review-write-area > .reviews-eyebrow { margin-bottom: 8px; }
+.review-write-area > h3 { font: 400 32px/1 'Bebas Neue', sans-serif; letter-spacing: .04em; }
+.review-eligibility-message a { display: inline-block; margin-left: 8px; color: black; font: 600 10px/1.4 'Satoshi', sans-serif; letter-spacing: .14em; text-underline-offset: 3px; }
+.review-editor { display: grid; gap: 21px; max-width: 720px; margin-top: 22px; }
+.review-editor-field { position: relative; display: grid; gap: 8px; min-width: 0; }
+.review-field-label { font: 600 10px/1.4 'Satoshi', sans-serif; letter-spacing: .15em; }
+.review-optional, .review-dialog-field > span { margin-left: 6px; color: color-mix(in srgb, black 52%, white); font: 400 9px/1.4 'Satoshi', sans-serif; letter-spacing: .08em; }
+.review-star-input { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.review-star-input button { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid transparent; background: transparent; color: black; cursor: pointer; }
+.review-star-input button svg { width: 24px; height: 24px; }
+.review-star-input button:hover, .review-star-input button[aria-checked="true"] { color: black; }
+.review-star-input button:focus-visible { outline: 2px solid black; outline-offset: 2px; }
+.review-star-input button:disabled { opacity: .5; cursor: not-allowed; }
+.review-star-input-label { margin-left: 8px; font: 400 11px/1.4 'Satoshi', sans-serif; color: color-mix(in srgb, black 62%, white); }
+.review-editor input, .review-editor textarea { width: 100%; min-height: 44px; padding: 11px 12px; border: 1px solid black; border-radius: 0; background: white; color: black; font: 400 13px/1.6 'Satoshi', sans-serif; }
+.review-editor textarea { min-height: 112px; resize: vertical; }
+.review-editor input:focus-visible, .review-editor textarea:focus-visible, .reviews-list-heading select:focus-visible, .review-dialog-field select:focus-visible, .review-dialog-field textarea:focus-visible { outline: 2px solid black; outline-offset: 2px; }
+.review-character-count { justify-self: end; font: 400 10px/1.4 'Satoshi', sans-serif; color: color-mix(in srgb, black 58%, white); }
+.review-submit-button { min-height: 48px; justify-self: start; padding: 0 23px; border: 1px solid black; background: black; color: white; font: 600 10px/1 'Satoshi', sans-serif; letter-spacing: .17em; cursor: pointer; }
+.review-submit-button:hover:not(:disabled) { background: white; color: black; }
+.review-inline-error, .reviews-error { color: black; font: 500 12px/1.6 'Satoshi', sans-serif; }
+.review-inline-error { margin: 0; }
+.reviews-error { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 0; border-block: 1px solid black; }
+.reviews-error p { margin: 0; }
+.reviews-error button, .review-own-summary button, .review-cancel-edit { min-height: 40px; padding: 0 14px; border: 1px solid black; background: white; color: black; font: 600 9px/1 'Satoshi', sans-serif; letter-spacing: .13em; cursor: pointer; }
+.reviews-error button:hover, .review-own-summary button:hover, .review-cancel-edit:hover { background: black; color: white; }
+.review-own-summary { display: grid; justify-items: start; gap: 10px; margin-top: 18px; }
+.review-own-summary p { margin: 0; font: 400 13px/1.6 'Satoshi', sans-serif; }
+.review-own-summary > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.review-cancel-edit { margin-top: 14px; }
+.review-toast { position: fixed; z-index: 9999; right: 24px; bottom: 24px; max-width: min(420px, calc(100vw - 32px)); padding: 16px 20px; border: 1px solid black; background: black; color: white; font: 500 11px/1.6 'Satoshi', sans-serif; letter-spacing: .04em; }
+.reviews-summary-skeleton, .reviews-list-skeleton { display: grid; gap: 12px; padding: 36px 0; border-bottom: 1px solid black; }
+.reviews-summary-skeleton { grid-template-columns: minmax(120px, .75fr) minmax(220px, 1.25fr); gap: 8vw; }
+.reviews-summary-skeleton span, .reviews-list-skeleton span, .review-inline-skeleton { display: block; min-height: 20px; background: color-mix(in srgb, black 9%, white); animation: review-pulse 1.2s ease-in-out infinite alternate; }
+.reviews-summary-skeleton span:first-child { height: 100px; }
+.reviews-list-skeleton > div { display: grid; gap: 10px; padding: 22px 0; border-top: 1px solid color-mix(in srgb, black 15%, white); }
+.reviews-list-skeleton span:first-child { width: 140px; }
+.reviews-list-skeleton span:last-child { width: 45%; }
+.review-inline-skeleton { width: 100%; height: 44px; margin-top: 18px; }
+@keyframes review-pulse { to { opacity: .45; } }
+.review-dialog-backdrop { position: fixed; z-index: 10000; inset: 0; display: grid; place-items: center; padding: 20px; background: color-mix(in srgb, black 56%, transparent); }
+.review-dialog { width: min(500px, 100%); max-height: min(90vh, 760px); overflow-y: auto; padding: clamp(24px, 5vw, 40px); border: 1px solid black; background: white; color: black; box-shadow: 0 18px 60px color-mix(in srgb, black 22%, transparent); }
+.review-dialog h2 { margin: 12px 0; font: 400 36px/1 'Bebas Neue', sans-serif; }
+.review-dialog > p { margin: 0; font: 400 13px/1.7 'Satoshi', sans-serif; color: color-mix(in srgb, black 65%, white); }
+.review-dialog-content { display: grid; gap: 16px; margin-top: 20px; }
+.review-dialog-field { display: grid; gap: 7px; font: 600 10px/1.4 'Satoshi', sans-serif; letter-spacing: .15em; }
+.review-dialog-field > span { margin: 0; }
+.review-dialog-field select, .review-dialog-field textarea { width: 100%; }
+.review-dialog-field textarea { resize: vertical; }
+.review-dialog-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.review-dialog-actions button { min-height: 44px; padding: 0 16px; border: 1px solid black; font: 600 9px/1 'Satoshi', sans-serif; letter-spacing: .14em; cursor: pointer; }
+.review-dialog-cancel { background: white; color: black; }
+.review-dialog-confirm { background: black; color: white; }
+.review-dialog-confirm.is-danger { border-color: black; background: white; color: black; }
+.review-dialog-cancel:hover:not(:disabled), .review-dialog-confirm.is-danger:hover:not(:disabled) { background: black; color: white; }
+.review-dialog-confirm:not(.is-danger):hover:not(:disabled) { background: white; color: black; }
+.review-dialog-actions button:focus-visible, .review-report-menu summary:focus-visible, .review-report-menu button:focus-visible, .reviews-load-more:focus-visible, .review-submit-button:focus-visible, .review-own-summary button:focus-visible, .review-cancel-edit:focus-visible, .reviews-error button:focus-visible { outline: 2px solid black; outline-offset: 3px; }
+.my-reviews-page .reviews-heading { align-items: flex-end; }
+.my-review-card { display: grid; grid-template-columns: minmax(180px, .4fr) minmax(0, 1fr); gap: 28px; padding: 26px 0; border-bottom: 1px solid color-mix(in srgb, black 22%, white); }
+.my-review-product { display: flex; align-items: flex-start; gap: 14px; min-width: 0; color: black; text-decoration: none; }
+.my-review-product img, .my-review-image-placeholder { width: 84px; height: 108px; flex: none; border: 1px solid black; object-fit: cover; }
+.my-review-image-placeholder { display: grid; place-items: center; font: 400 24px/1 'Bebas Neue', sans-serif; }
+.my-review-product > span:last-child { display: grid; gap: 7px; min-width: 0; }
+.my-review-product strong { font: 500 12px/1.5 'Satoshi', sans-serif; overflow-wrap: anywhere; }
+.my-review-product small { font: 500 9px/1.4 'Satoshi', sans-serif; letter-spacing: .13em; }
+.my-review-content { min-width: 0; }
+.my-review-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font: 400 10px/1.4 'Satoshi', sans-serif; }
+.my-review-hidden { padding: 4px 7px; border: 1px solid black; font: 500 9px/1.2 'Satoshi', sans-serif; letter-spacing: .1em; }
+.my-review-content h2 { margin: 15px 0 5px; font: 600 15px/1.45 'Satoshi', sans-serif; }
+.my-review-content > p { margin: 10px 0 0; font: 400 13px/1.7 'Satoshi', sans-serif; white-space: pre-wrap; overflow-wrap: anywhere; }
+.my-review-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.my-review-actions button { min-height: 40px; padding: 0 15px; border: 1px solid black; background: white; color: black; font: 600 9px/1 'Satoshi', sans-serif; letter-spacing: .13em; cursor: pointer; }
+.my-review-actions button:hover { background: black; color: white; }
+.my-review-actions button:focus-visible, .my-reviews-shop-link:focus-visible { outline: 2px solid black; outline-offset: 3px; }
+.my-reviews-shop-link { display: inline-flex; min-height: 46px; align-items: center; margin-top: 18px; padding: 0 20px; border: 1px solid black; color: black; font: 600 9px/1 'Satoshi', sans-serif; letter-spacing: .15em; text-decoration: none; }
+.my-reviews-shop-link:hover { background: black; color: white; }
+@media (max-width: 767px) {
+  .reviews-container { width: calc(100% - 40px); }
+  .reviews-summary { grid-template-columns: 1fr; gap: 28px; padding: 28px 0; }
+  .reviews-summary-score { display: grid; grid-template-columns: auto auto; align-items: center; column-gap: 16px; }
+  .reviews-summary-score > strong { grid-row: span 2; }
+  .reviews-list-heading { align-items: flex-start; flex-direction: column; }
+  .review-write-area { padding: 20px; }
+  .my-review-card { grid-template-columns: 1fr; gap: 16px; }
+}
+@media (max-width: 420px) {
+  .reviews-container { width: calc(100% - 32px); }
+  .reviews-heading { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .reviews-list-heading label { width: 100%; justify-content: space-between; }
+  .reviews-list-heading select { min-width: 0; }
+  .review-card footer { flex-direction: column; gap: 4px; }
+  .review-card footer span { text-align: left; }
+  .review-write-area { padding: 17px; }
+  .review-star-input-label { width: 100%; margin: 2px 0 0 4px; }
+  .reviews-error { align-items: flex-start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reviews-summary-skeleton span, .reviews-list-skeleton span, .review-inline-skeleton { animation: none; }
+}

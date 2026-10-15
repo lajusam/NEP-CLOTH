@@ -1,0 +1,192 @@
+/* ==========================================================================
+   MEN'S HERO SECTION STYLES
+   Custom fluid container-query typography lockup & entrance animations.
+   Stack: React / Next.js + GSAP + Plain CSS
+   ========================================================================== */
+
+/* ── FONT IMPORT ─────────────────────────────────────────────────────────── */
+/* Variable Google font: Archivo with width axis (62.5% - 125%) & weights 700-800.
+   Fallback: Syne (geometric sans) */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62.5..125,700..800&family=Syne:wght@700;800&display=swap');
+
+/* ── 1. WRAPPER CONTAINER ────────────────────────────────────────────────── */
+.men-hero-wrapper {
+  /* Controls coordinate reference: allows child text block to position absolutely */
+  position: relative;
+
+  /* Controls width: spans 100% of the parent container */
+  width: 100%;
+
+  /* Controls aspect ratio: locked strictly to 3 / 2 (matches 1264x848 image geometry) */
+  aspect-ratio: 3 / 2;
+
+  /* Controls overflow: hides zoom-in scaling of the image and sliding masked text */
+  overflow: hidden;
+
+  /* Controls container query context: defines 1cqw as 1% of this container's width */
+  container-type: inline-size;
+
+  /* Neutral dark backdrop to prevent flashes during image load/render */
+  background-color: #0b0b0b;
+}
+
+/* ── 2. BACKGROUND IMAGE ─────────────────────────────────────────────────── */
+.men-hero-img {
+  /* Controls width: fills 100% of wrapper width */
+  width: 100%;
+
+  /* Controls height: fills 100% of wrapper height */
+  height: 100%;
+
+  /* Controls image fit: covers container completely without letterboxing or distortion */
+  object-fit: cover;
+
+  /* Controls display: eliminates inline-block whitespace below images */
+  display: block;
+
+  /* Controls image focus point: keeps models centered as the container resizes */
+  object-position: center;
+
+  /* Controls initial scale: starts zoomed in at 1.15 before GSAP animates to 1 */
+  transform: scale(1.15);
+
+  /* Controls initial opacity: starts invisible at 0 before GSAP animates to 1 */
+  opacity: 0;
+
+  /* Controls initial clip-path: fully masked from the bottom (inset 0 0 100% 0) */
+  clip-path: inset(0 0 100% 0);
+
+  /* Optimizes GPU composite layer for transform, opacity, and clip-path */
+  will-change: transform, opacity, clip-path;
+}
+
+/* ── 3. TEXT BLOCK (TYPOGRAPHY LOCKUP) ───────────────────────────────────── */
+.men-hero-text-block {
+  /* Controls position type: anchors freely over the background image */
+  position: absolute;
+
+  /* Controls horizontal placement: 6.8% from the left edge of the image wrapper */
+  left: 6.8%;
+
+  /* Controls vertical placement: 47% from the top edge (line 1 cap-top ≈ 47%) */
+  top: 47%;
+
+  /* Controls text block width: spans 51% of container width (calibrated to Line 2) */
+  width: 51%;
+
+  /* Controls text color: pure white (#FFFFFF) */
+  color: #ffffff;
+
+  /* Controls capitalization: forces all letters to uppercase */
+  text-transform: uppercase;
+
+  /* Controls line-height: strict 1 to eliminate invisible font ascender/descender gaps */
+  line-height: 1;
+
+  /* Controls stacking order: ensures text stays above image (z-index: 2) */
+  z-index: 2;
+
+  /* Controls font family: Archivo variable font, fallback to Syne, then sans-serif */
+  font-family: 'Archivo', 'Syne', sans-serif;
+
+  /* Controls glyph stretch: 125% width extension for Monument Extended aesthetic */
+  font-stretch: 125%;
+
+  /* Controls variable font axis for width (125 = extended wide letterforms) */
+  font-variation-settings: 'wdth' 125;
+
+  /* Prevents accidental text selection while dragging or interacting */
+  user-select: none;
+
+  /* Smooth font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── 4. MASKED REVEAL CONTAINERS ─────────────────────────────────────────── */
+.men-hero-line-mask {
+  /* Controls display: block level so each line occupies its own strip */
+  display: block;
+
+  /* Controls width: fits natural text width (~51% for Line 2) to prevent clipping wide glyphs horizontally */
+  width: max-content;
+
+  /* Controls overflow: hides the line while translated down by yPercent: 110 */
+  overflow: hidden;
+
+  /* Controls position context for inner slide element */
+  position: relative;
+}
+
+/* ── 5. INNER ANIMATED LINES ─────────────────────────────────────────────── */
+.men-hero-line {
+  /* Controls display: block level so GSAP 2D transforms apply cleanly */
+  display: block;
+
+  /* Controls whitespace: preserves double space in "SALE  30% OFF" without collapsing */
+  white-space: pre;
+
+  /* Optimizes rendering during GSAP slide and fade */
+  will-change: transform, opacity;
+}
+
+/* ── LINE 1: "SALE  30% OFF" ─────────────────────────────────────────────── */
+.men-hero-line-1 {
+  /* Controls font size: 2.7% of container width */
+  font-size: 2.7cqw;
+
+  /* Controls font weight: bold (700) */
+  font-weight: 700;
+
+  /* Controls letter spacing: subtle 0.01em tracking for uppercase clarity */
+  letter-spacing: 0.01em;
+}
+
+/* ── LINE 2: "COLLECTION 23/24" ──────────────────────────────────────────── */
+.men-hero-line-2 {
+  /* Controls font size: 4.55% of container width (widest headline spanning ~51%) */
+  font-size: 4.55cqw;
+
+  /* Controls font weight: extra bold / heavy (800) */
+  font-weight: 800;
+
+  /* Controls letter spacing: 0 tracking to let wide 125% glyphs touch harmoniously */
+  letter-spacing: 0;
+
+  /* Controls vertical separation from Line 1: 0.4% of container width */
+  margin-top: 0.4cqw;
+}
+
+/* ── LINE 3: "NEP-CLOTH" ─────────────────────────────────────────────────── */
+.men-hero-line-3 {
+  /* Controls font size: 2.05% of container width */
+  font-size: 2.05cqw;
+
+  /* Controls font weight: bold (700) */
+  font-weight: 700;
+
+  /* Controls letter spacing: 0.02em tracking for architectural brand look */
+  letter-spacing: 0.02em;
+
+  /* Controls vertical separation from Line 2: 0.6% of container width */
+  margin-top: 0.6cqw;
+}
+
+/* ── 6. ACCESSIBILITY: PREFERS REDUCED MOTION ────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .men-hero-img {
+    /* Skip clip-path wipe and scale animation, show fully revealed image */
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    clip-path: inset(0 0 0% 0) !important;
+    will-change: auto;
+  }
+
+  .men-hero-line {
+    /* Skip masked slide-up and fade, show final resting text */
+    transform: none !important;
+    opacity: 1 !important;
+    will-change: auto;
+  }
+}

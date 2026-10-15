@@ -1,0 +1,192 @@
+[
+  {
+    "key": "cap-vintagecap",
+    "name": "vintagecap",
+    "category": "caps",
+    "section": "men",
+    "priceNPR": 1380,
+    "images": ["/caps/vintagecap.webp"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 6 }]
+  },
+  {
+    "key": "cap-ald",
+    "name": "ald",
+    "category": "caps",
+    "section": "men",
+    "priceNPR": 1720,
+    "images": ["/caps/ald.jpg"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 4 }]
+  },
+  {
+    "key": "cap-baseball-cap-in-black",
+    "name": "baseball cap in black",
+    "category": "caps",
+    "section": "men",
+    "priceNPR": 1490,
+    "images": ["/caps/baseball cap in black.jpg"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 8 }]
+  },
+  {
+    "key": "cap-ctrz",
+    "name": "ctrz",
+    "category": "caps",
+    "section": "men",
+    "priceNPR": 1960,
+    "images": ["/caps/ctrz.jpg"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 3 }]
+  },
+  {
+    "key": "cap-depop-mens-hat",
+    "name": "Depop Men's Hat",
+    "category": "caps",
+    "section": "men",
+    "priceNPR": 1840,
+    "images": ["/caps/Depop Men's Hat.jpg"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 5 }]
+  },
+  {
+    "key": "cap-drepro",
+    "name": "drepro",
+    "category": "caps",
+    "section": "men",
+    "priceNPR": 1280,
+    "images": ["/caps/drepro.jpg"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 7 }]
+  },
+  {
+    "key": "cap-rockshank",
+    "name": "rockshank",
+    "category": "caps",
+    "section": "men",
+    "priceNPR": 2210,
+    "images": ["/caps/rockshank.jpg"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 2 }]
+  },
+  {
+    "key": "cap-sharks-cap-1",
+    "name": "sharks cap 1",
+    "category": "caps",
+    "section": "men",
+    "priceNPR": 1650,
+    "images": ["/caps/sharks cap 1.jpg"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 9 }]
+  },
+  {
+    "key": "cap-winter-cap-1",
+    "name": "winter cap 1",
+    "category": "caps",
+    "section": "men",
+    "priceNPR": 2120,
+    "images": ["/caps/winter cap 1.jpg"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 5 }]
+  },
+  {
+    "key": "bag-elegant-leather-purse",
+    "name": "Elegant Leather Purse Authentic Design Chic Leather Brown Bag",
+    "category": "bags",
+    "section": "women",
+    "priceNPR": 4650,
+    "images": ["/womencloth/Bags/Elegant Leather Purse Authentic Design Chic Leather Brown Bag.webp"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 4 }]
+  },
+  {
+    "key": "bag-handmade-brown-leather",
+    "name": "Stylish Handmade Leather Brown Bag Premium Handmade Brown Leather Bag Elegant Leather Purse",
+    "category": "bags",
+    "section": "women",
+    "priceNPR": 5290,
+    "images": ["/womencloth/Bags/Stylish Handmade Leather Brown Bag Premium Handmade Brown Leather Bag Elegant Leather Purse.webp"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 3 }]
+  },
+  {
+    "key": "bag-jakioramour",
+    "name": "JAKIORAMOUR",
+    "category": "bags",
+    "section": "women",
+    "priceNPR": 3850,
+    "images": ["/womencloth/Bags/JAKIORAMOUR.webp"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 6 }]
+  },
+  {
+    "key": "bag-love-the-shade-of-maroon",
+    "name": "Love the shade of Maroon",
+    "category": "bags",
+    "section": "women",
+    "priceNPR": 4320,
+    "images": ["/womencloth/Bags/Love the shade of Maroon.webp"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 5 }]
+  },
+  {
+    "key": "bag-alagbero",
+    "name": "Alagbero",
+    "category": "bags",
+    "section": "women",
+    "priceNPR": 3170,
+    "images": ["/womencloth/Bags/Alagbero .jpg"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 4 }]
+  },
+  {
+    "key": "bag-dior-saddle-luxury-bags-style-inspiration",
+    "name": "Dior Saddle & Luxury Bags Style Inspiration",
+    "category": "bags",
+    "section": "women",
+    "priceNPR": 3490,
+    "images": ["/womencloth/Bags/Dior Saddle & Luxury Bags Style Inspiration.jpg"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 7 }]
+  },
+  {
+    "key": "bag-elegant-coach-brown-suede-shoulder-bag",
+    "name": "Elegant Coach Brown Suede Shoulder Bag",
+    "category": "bags",
+    "section": "women",
+    "priceNPR": 2980,
+    "images": ["/womencloth/Bags/Elegant Coach Brown Suede Shoulder Bag.jpg"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 8 }]
+  },
+  {
+    "key": "bag-juststar",
+    "name": "juststar",
+    "category": "bags",
+    "section": "women",
+    "priceNPR": 5720,
+    "images": ["/womencloth/Bags/juststar.jpg"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 2 }]
+  },
+  {
+    "key": "bag-vintage-guess-bag-autumn-brown-suede-gold-detailed-rare-shoulderbag-work-office",
+    "name": "Vintage Guess Bag Autumn Brown Suède Gold Detailed Rare Shoulderbag Work Office",
+    "category": "bags",
+    "section": "women",
+    "priceNPR": 3260,
+    "images": ["/womencloth/Bags/Vintage Guess Bag Autumn Brown Suède Gold Detailed Rare Shoulderbag Work Office.jpg"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 6 }]
+  },
+  {
+    "key": "bag-y2k-bags",
+    "name": "y2k bags",
+    "category": "bags",
+    "section": "women",
+    "priceNPR": 3610,
+    "images": ["/womencloth/Bags/y2k bags.jpg"],
+    "description": "",
+    "variants": [{ "size": "ONE SIZE", "color": "", "stock": 3 }]
+  }
+]

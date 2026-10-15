@@ -1,0 +1,133 @@
+.collection-closing-section {
+  padding-block: var(--collection-section-space, 96px);
+  background: var(--color-stark-white);
+}
+
+.collection-closing-banner {
+  position: relative;
+  isolation: isolate;
+  height: clamp(420px, 70svh, 720px);
+  overflow: hidden;
+  background: var(--color-obsidian);
+}
+
+.collection-closing-banner-image {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  transform: scale(1);
+}
+
+.collection-closing-banner-copy {
+  position: absolute;
+  z-index: 2;
+  right: 24px;
+  bottom: 72px;
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--color-stark-white);
+  text-align: center;
+}
+
+.collection-closing-banner-title {
+  margin: 0;
+  overflow: hidden;
+  color: var(--color-stark-white);
+  font-family: var(--font-display);
+  font-size: 76px;
+  font-weight: 400;
+  line-height: 0.96;
+  text-transform: uppercase;
+}
+
+.collection-closing-banner-title > span {
+  display: block;
+  overflow: hidden;
+}
+
+.collection-closing-banner-body {
+  max-width: 500px;
+  margin: 0;
+  color: var(--color-stark-white);
+  font-family: var(--font-editorial);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.collection-closing-banner-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-stark-white);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid currentColor;
+  transition: color 220ms ease, border-color 220ms ease;
+}
+
+.collection-closing-banner-link span {
+  display: inline-block;
+  transition: transform 220ms ease;
+}
+
+.collection-closing-banner-link:hover,
+.collection-closing-banner-link:focus-visible {
+  color: var(--color-altitude-orange);
+}
+
+.collection-closing-banner-link:hover span,
+.collection-closing-banner-link:focus-visible span {
+  transform: translateX(4px);
+}
+
+.collection-closing-banner-link:focus-visible {
+  outline: 2px solid var(--color-stark-white);
+  outline-offset: 6px;
+}
+
+@media (max-width: 1023px) {
+  .collection-closing-banner-copy {
+    right: 20px;
+    bottom: 56px;
+    left: 20px;
+  }
+
+  .collection-closing-banner-title {
+    font-size: 58px;
+  }
+}
+
+@media (max-width: 600px) {
+  .collection-closing-banner-copy {
+    right: 16px;
+    bottom: 32px;
+    left: 16px;
+    gap: 12px;
+  }
+
+  .collection-closing-banner-title {
+    font-size: 40px;
+  }
+
+  .collection-closing-banner-body {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collection-closing-banner-link,
+  .collection-closing-banner-link span {
+    transition: none;
+  }
+}

@@ -1,0 +1,128 @@
+// Prisma schema for NEP-CLOTH product catalog
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// A clothing product (e.g. "Blue Striped Shirt")
+model Product {
+  id          String    @id @default(cuid())
+  slug        String    @unique            // URL-friendly name, e.g. "blue-striped-shirt"
+  name        String
+  description String
+  section     String                       // "men" or "women"
+  category    String                       // e.g. "tops", "outerwear", "bottoms"
+  price       Int                          // price in paisa (NPR 2,500 = 250000)
+  rating      Float?                       // average rating, e.g. 4.8
+  images      String[]                     // array of image URLs/paths (images[0] = main, images[1] = model)
+  active      Boolean   @default(true)     // whether product is active/listed
+  createdAt   DateTime  @default(now())
+
+  variants    Variant[]                    // sizes & colors available
+  reviews     Review[]
+}
+
+// A specific size+color combo with stock count
+model Variant {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  size      String  // e.g. "S", "M", "L", "XL"
+  color     String  // e.g. "black", "white"
+  stock     Int     // how many in stock
+
+  @@unique([productId, size, color]) // prevent duplicate size+color for same product
+}
+
+// User profile matching Supabase Auth user
+model Profile {
+  id        String   @id                // Supabase auth.users.id
+  email     String   @unique
+  name      String
+  role      String   @default("customer") // "customer" or "admin"
+  createdAt DateTime @default(now())
+
+  orders    Order[]
+  reviews   Review[]       @relation("ReviewAuthor")
+  reports   ReviewReport[] @relation("ReviewReporter")
+}
+
+// Order placed by a customer
+model Order {
+  id            String      @id @default(cuid())
+  orderNumber   String      @unique            // Human-friendly unique identifier (e.g. "NEP-000123")
+  userId        String
+  user          Profile     @relation(fields: [userId], references: [id])
+  status        String      @default("pending") // "pending", "confirmed", "shipped", "delivered", "cancelled"
+  paymentMethod String      @default("cod")     // "cod"
+  paymentStatus String      @default("unpaid")  // "unpaid"
+  subtotal      Int                             // in paisa
+  shippingFee   Int                             // in paisa
+  total         Int                             // in paisa
+  customerName  String
+  phone         String
+  address       String
+  city          String                          // city / district
+  notes         String?
+  statusHistory Json?       @default("[]")     // audit trail: [{ status, changedAt, changedBy }]
+  createdAt     DateTime    @default(now())
+
+  items         OrderItem[]
+}
+
+// Snapshot of an item purchased within an order
+model OrderItem {
+  id          String   @id @default(cuid())
+  orderId     String
+  order       Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  variantId   String
+  productName String
+  size        String
+  color       String
+  unitPrice   Int      // price in paisa at purchase time
+  quantity    Int
+  image       String
+}
+
+model Review {
+  id           String   @id @default(cuid())
+  productId    String
+  product      Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  userId       String
+  user         Profile  @relation("ReviewAuthor", fields: [userId], references: [id], onDelete: Cascade)
+  rating       Int
+  title        String?
+  body         String?
+  status       String   @default("published")
+  hiddenReason String?
+  adminReply   String?
+  adminReplyAt DateTime?
+  editedAt     DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  reports      ReviewReport[]
+
+  @@unique([productId, userId])
+  @@index([productId, status, createdAt])
+  @@index([status, createdAt])
+}
+
+model ReviewReport {
+  id        String   @id @default(cuid())
+  reviewId  String
+  review    Review   @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  userId    String
+  user      Profile  @relation("ReviewReporter", fields: [userId], references: [id], onDelete: Cascade)
+  reason    String
+  note      String?
+  createdAt DateTime @default(now())
+
+  @@unique([reviewId, userId])
+  @@index([reviewId])
+  @@index([userId])
+}

@@ -1,0 +1,101 @@
+.flowing-menu-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.flowing-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.flowing-menu-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border-bottom: 0.5px solid;
+  transition: background-color 0.4s ease;
+}
+
+.flowing-menu-item:last-child {
+  border-bottom: none;
+}
+
+.flowing-menu-item-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.flowing-menu-item:hover .flowing-menu-item-bg {
+  opacity: 1;
+}
+
+.flowing-menu-item-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  transform: scale(1.1);
+  transition: transform 0.6s ease;
+}
+
+.flowing-menu-item:hover .flowing-menu-item-bg img {
+  transform: scale(1);
+}
+
+.flowing-menu-item-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* Marquee text */
+.flowing-menu-item-marquee {
+  display: flex;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.flowing-menu-item-marquee-inner {
+  display: flex;
+  animation: flowingMenuMarquee var(--flow-speed, 15s) linear infinite;
+}
+
+.flowing-menu-item:hover .flowing-menu-item-marquee-inner {
+  animation-play-state: running;
+}
+
+.flowing-menu-item-marquee-text {
+  font-family: 'Bebas Neue', sans-serif;
+  text-transform: uppercase;
+  padding: 0 2rem;
+  letter-spacing: 0.04em;
+  font-size: clamp(42px, 6vw, 80px);
+  line-height: 1;
+  user-select: none;
+}
+
+@keyframes flowingMenuMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

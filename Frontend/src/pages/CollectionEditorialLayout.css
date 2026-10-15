@@ -1,0 +1,259 @@
+.collection-editorial-page {
+  --collection-section-space: 96px;
+}
+
+.collection-editorial-page > #products > .collection-state {
+  box-sizing: border-box;
+  height: 100svh;
+  min-height: 0;
+  padding-block: var(--collection-section-space);
+}
+
+.collection-editorial-page > #products .product-grid-editorial {
+  box-sizing: border-box;
+  height: 100svh;
+  min-height: 0;
+  padding-block: var(--collection-section-space);
+  overflow: hidden;
+}
+
+.collection-editorial-page > #products .product-grid-editorial-content {
+  height: 100%;
+}
+
+.collection-editorial-page > #products .product-grid-editorial .product-carousel-track {
+  flex: 1;
+  min-height: 0;
+  padding-block: 24px 0;
+}
+
+.collection-editorial-page > #products .product-grid-editorial .carousel-card {
+  width: min(27vw, 280px);
+}
+
+.collection-editorial-page > #products .product-grid-editorial .product-tile-image {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+  aspect-ratio: 4 / 5 !important;
+}
+
+.collection-editorial-page .editorial-story-feature,
+.collection-editorial-page .editorial-story-lookbook,
+.collection-editorial-page .men-editorial-outro {
+  box-sizing: border-box;
+  height: 100svh;
+  min-height: 0;
+  padding-block: var(--collection-section-space);
+}
+
+.collection-editorial-page .editorial-story-feature-inner {
+  height: 100%;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  align-items: center;
+  gap: 64px;
+}
+
+.collection-editorial-page .editorial-story-copy {
+  align-self: center;
+  max-width: 480px;
+  padding-block: 0;
+}
+
+.collection-editorial-page .editorial-story-photo-column {
+  width: min(100%, calc((100svh - 192px) * 0.8));
+  height: auto;
+  max-height: calc(100svh - 192px);
+  aspect-ratio: 4 / 5;
+  justify-self: start;
+  border: 0;
+}
+
+.collection-editorial-page .editorial-story-feature--reverse .editorial-story-photo-column {
+  justify-self: end;
+}
+
+.collection-editorial-page .editorial-story-lookbook-inner {
+  height: 100%;
+  padding-block: 0;
+}
+
+.collection-editorial-page .editorial-story-lookbook-item .editorial-story-image-frame {
+  max-height: min(80svh, calc(100svh - 192px));
+  border: 0;
+}
+
+.collection-editorial-page .men-editorial-outro-inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  padding-inline: 40px;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.collection-editorial-page .men-editorial-outro-photo {
+  width: min(100%, calc((100svh - 192px) * 0.8));
+  height: auto;
+  max-height: calc(100svh - 192px);
+  aspect-ratio: 4 / 5;
+  justify-self: start;
+}
+
+.collection-editorial-page .men-editorial-outro-copy {
+  max-width: 480px;
+  padding-block: 0;
+}
+
+@media (max-width: 1023px) {
+  .collection-editorial-page {
+    --collection-section-space: 64px;
+  }
+
+  .collection-editorial-page > #products .product-grid-editorial .carousel-card {
+    width: min(64vw, 280px);
+  }
+
+  .collection-editorial-page .editorial-story-feature,
+  .collection-editorial-page .editorial-story-lookbook,
+  .collection-editorial-page .men-editorial-outro {
+    height: 100svh;
+  }
+
+  .collection-editorial-page .editorial-story-feature-inner {
+    height: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto;
+    align-content: stretch;
+    gap: 32px;
+  }
+
+  .collection-editorial-page .editorial-story-photo-column,
+  .collection-editorial-page .editorial-story-feature--reverse .editorial-story-photo-column {
+    order: -1;
+    width: min(100%, 34svh);
+    height: auto;
+    max-height: 40svh;
+    aspect-ratio: 4 / 5;
+    justify-self: center;
+  }
+
+  .collection-editorial-page .editorial-story-copy,
+  .collection-editorial-page .editorial-story-feature--reverse .editorial-story-copy {
+    order: 0;
+    align-self: center;
+    justify-self: stretch;
+    max-width: none;
+    padding-block: 0;
+  }
+
+  .collection-editorial-page .editorial-story-heading {
+    font-size: 42px;
+  }
+
+  .collection-editorial-page .editorial-story-body {
+    margin-block: 12px 14px;
+    font-size: 16px;
+  }
+
+  .collection-editorial-page .editorial-story-lookbook-inner {
+    height: 100%;
+    padding-block: 0;
+  }
+
+  .collection-editorial-page .editorial-story-lookbook-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .collection-editorial-page .men-editorial-outro-inner {
+    height: 100%;
+    padding-inline: 24px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: 24px;
+  }
+
+  .collection-editorial-page .men-editorial-outro-photo {
+    width: min(100%, 34svh);
+    height: auto;
+    max-height: 40svh;
+    aspect-ratio: 4 / 5;
+    justify-self: center;
+  }
+
+  .collection-editorial-page .men-editorial-outro-copy {
+    max-width: none;
+    padding-block: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .collection-editorial-page {
+    --collection-section-space: 48px;
+  }
+
+  .collection-editorial-page .editorial-story-feature-inner,
+  .collection-editorial-page .editorial-story-lookbook-inner {
+    padding-inline: 16px;
+  }
+
+  .collection-editorial-page .editorial-story-feature-inner {
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: 24px;
+  }
+
+  .collection-editorial-page .editorial-story-photo-column,
+  .collection-editorial-page .editorial-story-feature--reverse .editorial-story-photo-column {
+    width: min(100%, 44svh);
+    max-height: 48svh;
+  }
+
+  .collection-editorial-page .editorial-story-heading {
+    font-size: 38px;
+  }
+
+  .collection-editorial-page .editorial-story-body {
+    margin-block: 9px 10px;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .collection-editorial-page .editorial-story-lookbook-grid {
+    gap: 12px;
+  }
+
+  .collection-editorial-page .editorial-story-lookbook-caption {
+    font-size: 9px;
+    letter-spacing: 0.04em;
+  }
+
+  .collection-editorial-page .men-editorial-outro-inner {
+    padding-inline: 16px;
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: 20px;
+  }
+
+  .collection-editorial-page .men-editorial-outro-photo {
+    width: min(100%, 44svh);
+    max-height: 48svh;
+  }
+
+  .collection-editorial-page .men-editorial-outro-title {
+    font-size: 38px;
+  }
+
+  .collection-editorial-page .men-editorial-outro-body {
+    margin-block: 12px 14px;
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collection-editorial-page .editorial-story-image-frame > img,
+  .collection-editorial-page .men-editorial-outro-link,
+  .collection-editorial-page .men-editorial-outro-link span {
+    transition: none;
+  }
+}
