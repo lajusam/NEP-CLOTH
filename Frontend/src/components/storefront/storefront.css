@@ -11,7 +11,7 @@
 .storefront-section > [role="tabpanel"] { width: min(100% - 32px, 1360px); margin-inline: auto; }
 .storefront-cover-wrap { width: min(100% - 32px, 1360px); margin: 0 auto 32px; }
 .storefront-cover { display: grid; position: relative; overflow: hidden; height: clamp(320px, 45svh, 520px); color: white; isolation: isolate; text-decoration: none; }
-.storefront-cover > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.storefront-cover .responsive-image-picture > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 .storefront-cover-copy { z-index: 2; align-self: center; justify-self: center; display: flex; align-items: center; flex-direction: column; gap: 20px; padding: 24px; text-align: center; }
 .category-cover { display: grid; position: relative; overflow: hidden; width: 100%; height: clamp(280px, 38svh, 480px); color: var(--color-stark-white); isolation: isolate; text-decoration: none; }
 .category-cover-image { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.12); }

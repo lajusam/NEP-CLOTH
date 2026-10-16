@@ -23,14 +23,14 @@ const MEGA_MENU_DATA = {
     categories: ["New In", "Outerwear", "Tops", "Bottoms", "Accessories"],
     featured: ["Coats & Jackets", "Knitwear", "Trousers", "Accessories", "New Arrivals"],
     picks: [],
-    campaign: "/images/cinematic_female_full_body.png",
+    campaign: "/womencloth/womenside/women1.jpg",
     label: "WOMEN",
   },
   men: {
     categories: ["New In", "Outerwear", "Tops", "Bottoms", "Footwear"],
     featured: ["Coats & Jackets", "Knitwear", "Trousers", "Accessories", "New Arrivals"],
     picks: [],
-    campaign: "/images/male_black_coat_full_body.png",
+    campaign: "/mencloth/menside/men1.jpg",
     label: "MEN",
   },
 };

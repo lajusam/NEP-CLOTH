@@ -5,7 +5,7 @@ import ScrollHero from "../components/ScrollHero";
 import MarqueeStrip from "../components/MarqueeStrip";
 import CollectionsGrid from "../components/CollectionsGrid";
 import Footer from "../components/Footer";
-import HomeCollectionSections, { HomeAccessorySections } from "../components/storefront/HomeCollectionSections";
+import HomeCollectionSections, { HomeAccessorySections, HomeTrustStrip } from "../components/storefront/HomeCollectionSections";
 import "../components/storefront/storefront.css";
 
 export default function HomePage() {
@@ -172,6 +172,8 @@ export default function HomePage() {
       <HomeCollectionSections />
 
       <HomeAccessorySections />
+
+      <HomeTrustStrip />
 
       {/* Newsletter */}
       <section className="bg-heritage-cream py-[120px] border-b border-obsidian">

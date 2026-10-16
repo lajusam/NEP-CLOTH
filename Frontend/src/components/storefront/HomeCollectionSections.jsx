@@ -56,7 +56,7 @@ function ProductSection({ config, cover }) {
   </section>;
 }
 
-function TrustStrip() {
+export function HomeTrustStrip() {
   const icons = { package: Package, truck: Truck, shield: ShieldCheck };
   const items = STORE_INFO.trustItems.filter((item) => item.text.trim());
   if (!items.length) return null;
@@ -79,6 +79,5 @@ export default function HomeCollectionSections() {
   return <div className="storefront-home-sections">
     <ProductSection config={sections[0]} cover={{ image: IMAGES.womenSide3, title: "WOMEN", to: "/women", objectPosition: "center 15%" }} />
     <ProductSection config={sections[1]} cover={{ image: "/mencloth/menside/56af69813fa9f9e5fe24af2edcb21709.jpg", title: "MEN", to: "/men", objectPosition: "center 38%" }} />
-    <TrustStrip />
   </div>;
 }
