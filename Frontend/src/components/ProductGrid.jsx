@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { formatPrice, getMainImage, getModelImage } from "../lib/api";
 import { interleaveByCategory } from "../lib/mixProducts";
+import ResponsiveImage from "./ResponsiveImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,7 +95,7 @@ export default function ProductGrid({ products = [], page = "women" }) {
 
       {filteredProducts.length ? (
         <div ref={cardsRef} className="product-carousel-track flex items-start gap-6 md:gap-10 overflow-x-auto no-scrollbar py-12 snap-x snap-mandatory">
-          {filteredProducts.map((product) => {
+          {filteredProducts.map((product, index) => {
             const mainImage = getMainImage(product);
             const alternateImage = isHome ? null : getModelImage(product);
             const hasAlternate = Boolean(alternateImage && alternateImage !== mainImage);
@@ -102,22 +103,26 @@ export default function ProductGrid({ products = [], page = "women" }) {
             <button key={product.id || product.slug} type="button" onClick={() => openProduct(product)}
               className={`carousel-card group flex-none relative w-[240px] md:w-[280px] text-left snap-start select-none ${hasAlternate ? "has-product-alt" : ""}`}>
               <span className={`block relative w-full overflow-hidden border border-black/15 bg-[#f4f0eb] ${isHome ? "" : "product-tile-image"}`} style={{ aspectRatio: isHome ? "2/3" : "4/5" }}>
-                <img
+                <ResponsiveImage
                   src={mainImage}
                   alt={product.name}
+                  width={800}
+                  height={1000}
+                  sizes="(max-width: 640px) 78vw, 320px"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
                   className="product-grid-image w-full h-full object-cover object-top"
-                  {...(isHome ? {} : { width: 800, height: 1000, loading: "lazy", decoding: "async" })}
                 />
                 {hasAlternate && (
-                  <img
+                  <ResponsiveImage
                     src={alternateImage}
                     alt=""
+                    width={800}
+                    height={1000}
+                    sizes="(max-width: 640px) 78vw, 320px"
                     aria-hidden="true"
                     className="product-grid-image product-grid-image-secondary w-full h-full object-cover object-top"
-                    width="800"
-                    height="1000"
                     loading="lazy"
-                    decoding="async"
                   />
                 )}
                 <span className="product-card-caption absolute inset-x-0 bottom-0 flex justify-between items-center bg-white/95 px-4 py-3 font-sans text-[10px] uppercase tracking-[0.12em]">

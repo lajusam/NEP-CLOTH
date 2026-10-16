@@ -3,6 +3,20 @@ import { supabase } from "../lib/supabase";
 import { fetchMe } from "../lib/api";
 
 const AuthContext = createContext(null);
+const profileCache = new Map();
+const profileRequests = new Map();
+
+function fetchProfileCached(userId) {
+  const cached = profileCache.get(userId);
+  if (cached && Date.now() - cached.at < 60_000) return Promise.resolve(cached.value);
+  if (profileRequests.has(userId)) return profileRequests.get(userId);
+  const request = fetchMe().then((value) => {
+    profileCache.set(userId, { value, at: Date.now() });
+    return value;
+  }).finally(() => profileRequests.delete(userId));
+  profileRequests.set(userId, request);
+  return request;
+}
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
@@ -13,7 +27,7 @@ export function AuthProvider({ children }) {
   // Refresh profile from backend GET /auth/me
   const refreshProfile = useCallback(async () => {
     try {
-      const data = await fetchMe();
+      const data = user?.id ? await fetchProfileCached(user.id) : await fetchMe();
       setProfile(data);
       return data;
     } catch (err) {
@@ -21,7 +35,7 @@ export function AuthProvider({ children }) {
       setProfile(null);
       return null;
     }
-  }, []);
+  }, [session?.user?.id]);
 
   useEffect(() => {
     let mounted = true;
@@ -40,7 +54,7 @@ export function AuthProvider({ children }) {
 
         if (session?.user) {
           try {
-            const data = await fetchMe();
+            const data = await fetchProfileCached(session.user.id);
             if (mounted) setProfile(data);
           } catch (err) {
             if (mounted) setProfile(null);
@@ -68,7 +82,7 @@ export function AuthProvider({ children }) {
 
       if (session?.user) {
         try {
-          const data = await fetchMe();
+          const data = await fetchProfileCached(session.user.id);
           if (mounted) setProfile(data);
         } catch (err) {
           if (mounted) setProfile(null);
@@ -110,7 +124,7 @@ export function AuthProvider({ children }) {
 
     // Immediately fetch profile after sign-in
     try {
-      const prof = await fetchMe();
+      const prof = await fetchProfileCached(data.user.id);
       setProfile(prof);
     } catch {
       // Backend upserts profile on requireAuth

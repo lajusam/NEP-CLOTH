@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import MediaOverlay from "../MediaOverlay";
+import ResponsiveImage from "../ResponsiveImage";
 
 function scrollToSection(event, targetId) {
   if (!targetId) return;
@@ -63,7 +64,7 @@ export default function CategoryCover({
 
   const contents = (
     <>
-      <img
+      <ResponsiveImage
         ref={imageRef}
         className="category-cover-image"
         src={image}

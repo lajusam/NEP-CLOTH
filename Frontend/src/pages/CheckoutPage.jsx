@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
+import ResponsiveImage from "../components/ResponsiveImage";
 import { createOrder, formatPrice } from "../lib/api";
 import Footer from "../components/Footer";
 
@@ -324,7 +325,7 @@ export default function CheckoutPage() {
                   <div key={item.variantId} className="py-3 first:pt-0 flex gap-3 items-center">
                     <div className="w-12 h-16 bg-zinc-200 flex-shrink-0 overflow-hidden border border-zinc-300">
                       {item.image ? (
-                        <img src={item.image} alt="" className="w-full h-full object-cover object-top" />
+                        <ResponsiveImage src={item.image} alt="" width={96} height={128} sizes="48px" className="w-full h-full object-cover object-top" />
                       ) : null}
                     </div>
                     <div className="flex-1 min-w-0">

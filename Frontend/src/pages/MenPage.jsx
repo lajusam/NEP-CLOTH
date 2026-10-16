@@ -1,37 +1,18 @@
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef } from "react";
 import MenHero from "../components/MenHero";
 import ProductGrid from "../components/ProductGrid";
 import { EditorialFeature, EditorialLookbook } from "../components/EditorialPhotoSection";
 import CollectionClosingBanner from "../components/CollectionClosingBanner";
 import Footer from "../components/Footer";
 import useCollectionMotion from "../hooks/useCollectionMotion";
-import { fetchProducts } from "../lib/api";
+import useProducts from "../hooks/useProducts";
 import "./CollectionEditorialLayout.css";
 
 export default function MenPage() {
   const pageRef = useRef(null);
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { data: products = [], isPending: loading, error, refetch } = useProducts({ section: "men" });
 
   useCollectionMotion(pageRef);
-
-  const loadProducts = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const data = await fetchProducts({ section: "men" });
-      setProducts(data);
-    } catch (err) {
-      setError(err.message || "Failed to load men's collection");
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    loadProducts();
-  }, [loadProducts]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -49,9 +30,9 @@ export default function MenPage() {
         ) : error ? (
           <div className="collection-state w-full py-[120px] bg-stark-white flex flex-col items-center justify-center gap-4 text-center px-6">
             <h3 className="font-display text-[36px] text-black">UNABLE TO LOAD PRODUCTS</h3>
-            <p className="font-sans text-[13px] text-[#666] max-w-md">{error}</p>
+            <p className="font-sans text-[13px] text-[#666] max-w-md">{error.message || "Failed to load men's collection"}</p>
             <button
-              onClick={loadProducts}
+              onClick={() => refetch()}
               className="mt-2 px-8 py-3 bg-black text-white font-sans text-[11px] uppercase tracking-[0.15em] hover:bg-[#333] transition-colors cursor-pointer"
             >
               RETRY

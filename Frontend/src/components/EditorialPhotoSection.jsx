@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import useEditorialReveal from "../hooks/useEditorialReveal";
+import ResponsiveImage from "./ResponsiveImage";
 import "./EditorialPhotoSection.css";
 
 function EditorialHeadline({ headline }) {
@@ -18,7 +19,7 @@ function EditorialHeadline({ headline }) {
 function EditorialPhoto({ image, alt }) {
   return (
     <div className="editorial-story-image-frame" data-editorial-photo>
-      <img data-editorial-image data-editorial-parallax src={image.src} alt={alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
+      <ResponsiveImage data-editorial-image data-editorial-parallax src={image.src} alt={alt} width={image.width} height={image.height} sizes="(max-width: 768px) 100vw, 50vw" />
     </div>
   );
 }

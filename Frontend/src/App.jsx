@@ -1,34 +1,50 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import Navbar from "./components/Navbar";
 import CursorFollower from "./components/CursorFollower";
 import CartDrawer from "./components/CartDrawer";
-import HomePage from "./pages/HomePage";
-import WomenPage from "./pages/WomenPage";
-import MenPage from "./pages/MenPage";
-import ProductPage from "./pages/ProductPage";
-import LoginPage from "./pages/LoginPage";
-import SignUpPage from "./pages/SignUpPage";
-import AccountPage from "./pages/AccountPage";
-import MyReviewsPage from "./pages/MyReviewsPage";
-import CartPage from "./pages/CartPage";
-import CheckoutPage from "./pages/CheckoutPage";
-import CustomerOrdersPage from "./pages/OrdersPage";
-import CustomerOrderDetailPage from "./pages/OrderDetailPage";
-import ProtectedRoute from "./components/ProtectedRoute";
-import AdminRoute from "./components/AdminRoute";
 import { AuthProvider } from "./context/AuthContext";
 import { CartProvider } from "./context/CartContext";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-// Admin imports
-import AdminLayout from "./pages/admin/AdminLayout";
-import DashboardPage from "./pages/admin/DashboardPage";
-import ProductsPage from "./pages/admin/ProductsPage";
-import AddEditProductPage from "./pages/admin/AddEditProductPage";
-import AdminOrdersPage from "./pages/admin/OrdersPage";
-import AdminOrderDetailPage from "./pages/admin/OrderDetailPage";
-import InventoryPage from "./pages/admin/InventoryPage";
-import CustomersPage from "./pages/admin/CustomersPage";
-import ReviewsPage from "./pages/admin/ReviewsPage";
+const HomePage = lazy(() => import("./pages/HomePage"));
+const WomenPage = lazy(() => import("./pages/WomenPage"));
+const MenPage = lazy(() => import("./pages/MenPage"));
+const ProductPage = lazy(() => import("./pages/ProductPage"));
+const LoginPage = lazy(() => import("./pages/LoginPage"));
+const SignUpPage = lazy(() => import("./pages/SignUpPage"));
+const AccountPage = lazy(() => import("./pages/AccountPage"));
+const MyReviewsPage = lazy(() => import("./pages/MyReviewsPage"));
+const CartPage = lazy(() => import("./pages/CartPage"));
+const CheckoutPage = lazy(() => import("./pages/CheckoutPage"));
+const CustomerOrdersPage = lazy(() => import("./pages/OrdersPage"));
+const CustomerOrderDetailPage = lazy(() => import("./pages/OrderDetailPage"));
+const ProtectedRoute = lazy(() => import("./components/ProtectedRoute"));
+const AdminRoute = lazy(() => import("./components/AdminRoute"));
+const AdminLayout = lazy(() => import("./pages/admin/AdminLayout"));
+const DashboardPage = lazy(() => import("./pages/admin/DashboardPage"));
+const ProductsPage = lazy(() => import("./pages/admin/ProductsPage"));
+const AddEditProductPage = lazy(() => import("./pages/admin/AddEditProductPage"));
+const AdminOrdersPage = lazy(() => import("./pages/admin/OrdersPage"));
+const AdminOrderDetailPage = lazy(() => import("./pages/admin/OrderDetailPage"));
+const InventoryPage = lazy(() => import("./pages/admin/InventoryPage"));
+const CustomersPage = lazy(() => import("./pages/admin/CustomersPage"));
+const ReviewsPage = lazy(() => import("./pages/admin/ReviewsPage"));
+
+function StorefrontLayout() {
+  return <><CursorFollower /><Navbar /><Suspense fallback={<div className="route-loading" aria-hidden="true" />}><main id="main-content"><Outlet /></main></Suspense></>;
+}
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60_000,
+      gcTime: 5 * 60_000,
+      retry: 1,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 // Simple 404 page for unknown /admin/* routes — shown inside admin layout
 function AdminNotFound() {
@@ -48,26 +64,26 @@ function AdminNotFound() {
 export default function App() {
   return (
     <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <CartProvider>
           <CartDrawer />
           <Routes>
             {/* Storefront routes */}
-            <Route path="/" element={<><CursorFollower /><Navbar /><HomePage /></>} />
-            <Route path="/women" element={<><CursorFollower /><Navbar /><WomenPage /></>} />
-            <Route path="/men" element={<><CursorFollower /><Navbar /><MenPage /></>} />
-            <Route path="/product/:slug" element={<><CursorFollower /><Navbar /><ProductPage /></>} />
-            <Route path="/cart" element={<><CursorFollower /><Navbar /><CartPage /></>} />
+            <Route element={<StorefrontLayout />}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/women" element={<WomenPage />} />
+              <Route path="/men" element={<MenPage />} />
+              <Route path="/product/:slug" element={<ProductPage />} />
+              <Route path="/cart" element={<CartPage />} />
 
             {/* Auth routes */}
-            <Route path="/login" element={<><CursorFollower /><Navbar /><LoginPage /></>} />
-            <Route path="/signup" element={<><CursorFollower /><Navbar /><SignUpPage /></>} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignUpPage />} />
             <Route
               path="/account"
               element={
                 <ProtectedRoute>
-                  <CursorFollower />
-                  <Navbar />
                   <AccountPage />
                 </ProtectedRoute>
               }
@@ -76,8 +92,6 @@ export default function App() {
               path="/account/reviews"
               element={
                 <ProtectedRoute>
-                  <CursorFollower />
-                  <Navbar />
                   <MyReviewsPage />
                 </ProtectedRoute>
               }
@@ -88,8 +102,6 @@ export default function App() {
               path="/checkout"
               element={
                 <ProtectedRoute>
-                  <CursorFollower />
-                  <Navbar />
                   <CheckoutPage />
                 </ProtectedRoute>
               }
@@ -98,8 +110,6 @@ export default function App() {
               path="/orders"
               element={
                 <ProtectedRoute>
-                  <CursorFollower />
-                  <Navbar />
                   <CustomerOrdersPage />
                 </ProtectedRoute>
               }
@@ -108,20 +118,19 @@ export default function App() {
               path="/orders/:id"
               element={
                 <ProtectedRoute>
-                  <CursorFollower />
-                  <Navbar />
                   <CustomerOrderDetailPage />
                 </ProtectedRoute>
               }
             />
+            </Route>
 
             {/* Admin routes — guarded by AdminRoute (server enforces requireAdmin on all /admin API calls) */}
-            <Route
+              <Route
               path="/admin"
               element={
-                <AdminRoute>
-                  <AdminLayout />
-                </AdminRoute>
+                <Suspense fallback={<div className="route-loading" aria-hidden="true" />}>
+                  <AdminRoute><AdminLayout /></AdminRoute>
+                </Suspense>
               }
             >
               <Route index element={<DashboardPage />} />
@@ -139,6 +148,7 @@ export default function App() {
           </Routes>
         </CartProvider>
       </AuthProvider>
+      </QueryClientProvider>
     </BrowserRouter>
   );
 }

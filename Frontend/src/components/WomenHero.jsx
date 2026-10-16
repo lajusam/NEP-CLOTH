@@ -228,6 +228,10 @@ export default function WomenHero({
       <img
         ref={imgRef}
         src={imageSrc}
+        srcSet="/optimized/images/women-section-480.webp 480w, /optimized/images/women-section-768.webp 768w, /optimized/images/women-section-1280.webp 1280w"
+        sizes="100vw"
+        width="1376"
+        height="768"
         alt={alt}
         className="women-hero-img"
         loading="eager"

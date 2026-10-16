@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { formatPrice, getMainImage } from "../lib/api";
+import ResponsiveImage from "./ResponsiveImage";
 
 export default function ProductCard({ product, isOpen, onToggle }) {
   const [liked, setLiked] = useState(false);
@@ -15,9 +16,12 @@ export default function ProductCard({ product, isOpen, onToggle }) {
     >
       {/* Product photo stays visible; hover only adds a subtle zoom. */}
       <div className="relative w-full overflow-hidden border-b border-obsidian" style={{ aspectRatio: "3/4" }}>
-        <img
+        <ResponsiveImage
           src={imageSrc}
           alt={product?.name}
+          width={800}
+          height={1000}
+          sizes="(max-width: 640px) 80vw, 320px"
           className="absolute inset-0 w-full h-full product-img-hover"
           style={{ objectFit: "cover", objectPosition: "top center" }}
         />

@@ -1,4 +1,5 @@
 import crypto from "crypto";
+import sharp from "sharp";
 import { supabase } from "./supabase.js";
 
 /**
@@ -79,18 +80,23 @@ export function detectImageMagicBytes(buffer: Buffer): { ext: string; mime: stri
  */
 export async function uploadProductImage(
   buffer: Buffer,
-  mime: string,
-  ext: string
+  _mime: string,
+  _ext: string
 ): Promise<string> {
   // Try ensuring bucket exists
   await ensureProductImagesBucket();
 
-  const randomName = `${crypto.randomUUID()}.${ext}`;
+  const optimizedBuffer = await sharp(buffer)
+    .rotate()
+    .resize({ width: 1600, withoutEnlargement: true })
+    .webp({ quality: 85 })
+    .toBuffer();
+  const randomName = `${crypto.randomUUID()}.webp`;
 
   const { data, error } = await supabase.storage
     .from("product-images")
-    .upload(randomName, buffer, {
-      contentType: mime,
+    .upload(randomName, optimizedBuffer, {
+      contentType: "image/webp",
       upsert: false,
     });
 

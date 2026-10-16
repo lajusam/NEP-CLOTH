@@ -5,6 +5,7 @@ import Badge from './Badge';
 import { AdminEmptyState, AdminAlert, ConfirmDialog } from './ui/AdminFeedback';
 import { useAdminToast } from './ui/useAdminToast';
 import AdminButton from './ui/AdminButton';
+import ResponsiveImage from '../ResponsiveImage';
 import { fetchAdminProducts, archiveAdminProduct, restoreAdminProduct, deleteAdminProduct, formatPrice } from '../../lib/api';
 
 export default function ProductsTable({ categoryFilter = 'ALL', sectionFilter = 'ALL', statusFilter = 'ALL', search = '', onCategories }) {
@@ -86,7 +87,7 @@ export default function ProductsTable({ categoryFilter = 'ALL', sectionFilter = 
     </div></details>
   </div>;
   const cells = (p) => [
-    <div className="admin-product-cell" key="product"><div className="admin-product-thumb">{p.images?.[0] ? <img src={p.images[0]} alt="" /> : <span>{p.name?.slice(0, 2).toUpperCase() || '—'}</span>}</div><div className="min-w-0"><strong className="admin-name-truncate" title={p.name}>{p.name}</strong><small className="admin-muted-note" title={p.slug}>/{p.slug}</small></div></div>,
+    <div className="admin-product-cell" key="product"><div className="admin-product-thumb">{p.images?.[0] ? <ResponsiveImage src={p.images[0]} alt="" width={64} height={80} sizes="64px" /> : <span>{p.name?.slice(0, 2).toUpperCase() || '—'}</span>}</div><div className="min-w-0"><strong className="admin-name-truncate" title={p.name}>{p.name}</strong><small className="admin-muted-note" title={p.slug}>/{p.slug}</small></div></div>,
     <span key="category"><Badge variant={p.category || 'neutral'} className="admin-badge-outline" /></span>,<span key="section"><Badge variant={p.section} /></span>,<span key="price" className="admin-align-right admin-numeric">{formatPrice(p.price)}</span>,<span key="stock"><strong className="admin-numeric">{p.totalStock}</strong> <Badge variant={p.totalStock === 0 ? 'oos' : p.variants.some((variant) => Number(variant.stock) > 0 && Number(variant.stock) <= 4) ? 'lowstock' : 'instock'} /><small className="admin-muted-note">{p.variants?.length || 0} variants</small></span>,
     <span key="status">{!p.active ? <Badge variant="archived" label="Archived" /> : p.totalStock === 0 ? <Badge variant="oos" label="Out of stock" /> : <Badge variant="active" label="Active" />}</span>,<span key="actions">{actions(p)}</span>,
   ];

@@ -4,6 +4,7 @@ import prisma from "../lib/prisma.js";
 import { cleanReviewText, findDeliveredOrderForProduct, getPublishedReviewStats, reviewLinkPattern, toPublicReview } from "../lib/reviews.js";
 import { optionalAuth, requireAuth } from "../middleware/auth.js";
 import { publicReviewReadLimiter, reviewWriteLimiter } from "../lib/reviewRateLimits.js";
+import { loadPublicProductCache } from "../lib/publicProductCache.js";
 
 const productsRouter = Router();
 
@@ -61,36 +62,28 @@ productsRouter.get("/", async (req: Request, res: Response, next: NextFunction) 
     }
 
     const { section, category, page, limit } = parsed.data;
+    const cacheKey = `list:${section || "*"}:${category || "*"}:${page}:${limit}`;
+    res.setHeader("Cache-Control", "public, max-age=15, stale-while-revalidate=60");
+    const payload = await loadPublicProductCache(cacheKey, async () => {
+      const where: Record<string, unknown> = { active: true };
+      if (section) where.section = section;
+      if (category) where.category = category;
 
-    // Filter criteria - only active products in public catalog
-    const where: Record<string, unknown> = {
-      active: true,
-    };
-    if (section) where.section = section;
-    if (category) where.category = category;
-
-    // Total count for pagination metadata
-    const total = await prisma.product.count({ where });
-
-    // Fetch products: newest first, include variants
-    const products = await prisma.product.findMany({
-      where,
-      include: { variants: true },
-      orderBy: { createdAt: "desc" },
-      skip: (page - 1) * limit,
-      take: limit,
+      const total = await prisma.product.count({ where });
+      const products = await prisma.product.findMany({
+        where,
+        include: { variants: true },
+        orderBy: { createdAt: "desc" },
+        skip: (page - 1) * limit,
+        take: limit,
+      });
+      const reviewStats = await getPublishedReviewStats(products.map((product) => product.id));
+      return {
+        data: products.map((product) => ({ ...product, ...reviewStats.get(product.id) })),
+        meta: { page, limit, total, totalPages: Math.ceil(total / limit) },
+      };
     });
-
-    const reviewStats = await getPublishedReviewStats(products.map((product) => product.id));
-    res.json({
-      data: products.map((product) => ({ ...product, ...reviewStats.get(product.id) })),
-      meta: {
-        page,
-        limit,
-        total,
-        totalPages: Math.ceil(total / limit),
-      },
-    });
+    res.json(payload);
   } catch (err) {
     next(err);
   }
@@ -205,18 +198,22 @@ productsRouter.get("/:slug", async (req: Request, res: Response, next: NextFunct
       return;
     }
 
-    const product = await prisma.product.findFirst({
-      where: { slug, active: true },
-      include: { variants: true },
+    const cacheKey = `detail:${slug}`;
+    res.setHeader("Cache-Control", "public, max-age=15, stale-while-revalidate=60");
+    const payload = await loadPublicProductCache(cacheKey, async () => {
+      const product = await prisma.product.findFirst({
+        where: { slug, active: true },
+        include: { variants: true },
+      });
+      if (!product) return null;
+      const stats = (await getPublishedReviewStats([product.id])).get(product.id)!;
+      return { data: { ...product, ...stats } };
     });
-
-    if (!product) {
+    if (!payload) {
       res.status(404).json({ error: `Product with slug "${slug}" not found` });
       return;
     }
-
-    const stats = (await getPublishedReviewStats([product.id])).get(product.id)!;
-    res.json({ data: { ...product, ...stats } });
+    res.json(payload);
   } catch (err) {
     next(err);
   }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MediaOverlay from "./MediaOverlay";
+import ResponsiveImage from "./ResponsiveImage";
 import "./CollectionClosingBanner.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -53,10 +54,13 @@ export default function CollectionClosingBanner({ image, alt, title, body, ctaTe
     <section ref={sectionRef} className="collection-closing-section">
       <div className="container-page">
         <div className="collection-closing-banner">
-          <img
+          <ResponsiveImage
             className="collection-closing-banner-image"
             src={image}
             alt={alt}
+            width={1600}
+            height={900}
+            sizes="100vw"
             data-closing-image
             loading="lazy"
             decoding="async"

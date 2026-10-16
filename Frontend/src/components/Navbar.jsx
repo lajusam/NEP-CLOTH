@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import gsap from "gsap";
 import { IMAGES } from "../data/images";
 import { fetchProducts, formatPrice, getMainImage } from "../lib/api";
@@ -52,27 +53,15 @@ export default function Navbar() {
   const [navHidden, setNavHidden] = useState(false);
   const [overlayImage, setOverlayImage] = useState(NAV_ITEMS[0].image);
   const [megaMenu, setMegaMenu] = useState(null); // 'women' | 'men' | null
-  const [womenPicks, setWomenPicks] = useState([]);
-  const [menPicks, setMenPicks] = useState([]);
   const megaMenuTimeout = useRef(null);
 
-  useEffect(() => {
-    let active = true;
-    Promise.all([
-      fetchProducts({ section: "women", limit: 2 }),
-      fetchProducts({ section: "men", limit: 2 }),
-    ])
-      .then(([wData, mData]) => {
-        if (active) {
-          setWomenPicks(wData);
-          setMenPicks(mData);
-        }
-      })
-      .catch((err) => console.error("Navbar picks fetch error:", err));
-    return () => {
-      active = false;
-    };
-  }, []);
+  const picksQuery = useQuery({
+    queryKey: ["navbar-picks", megaMenu],
+    queryFn: () => fetchProducts({ section: megaMenu, limit: 2 }),
+    enabled: Boolean(megaMenu),
+    staleTime: 60_000,
+  });
+  const menuPicks = picksQuery.data || [];
 
   useEffect(() => {
     let previousY = window.scrollY;
@@ -484,7 +473,7 @@ export default function Navbar() {
                   EDITOR&apos;S PICK
                 </h4>
                 <div style={{ display: "flex", gap: "16px" }}>
-                  {(megaMenu === "women" ? womenPicks : menPicks).map((product) => (
+                  {menuPicks.map((product) => (
                     <Link
                       key={product.id || product.slug}
                       to={`/product/${product.slug || product.id}`}

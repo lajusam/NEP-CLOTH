@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Package, ShieldCheck, Truck } from "lucide-react";
-import { fetchStorefrontProducts } from "../../lib/storefrontProducts";
+import useProducts from "../../hooks/useProducts";
 import { STORE_INFO } from "../../config/storeInfo";
 import { IMAGES } from "../../data/images";
 import { interleaveByCategory } from "../../lib/mixProducts";
@@ -21,20 +21,17 @@ const accessorySections = [
   { key: "bags", title: "BAGS", filters: { category: "bags", limit: 12 }, label: "Bags", className: "storefront-accessories", targetId: "home-bags-heading", cover: { image: "/womencloth/Bags/bagcover.jpg", srcSet: "/womencloth/Bags/bagcover-640.webp 640w, /womencloth/Bags/bagcover-1280.webp 1280w, /womencloth/Bags/bagcover-1920.webp 1920w", width: 1200, height: 1680, objectPosition: "center 22%" } },
 ];
 
+const HOME_PRODUCTS_FILTERS = { limit: 50 };
+
 function useProductQuery(filters) {
-  const [state, setState] = useState({ products: [], loading: true, error: "" });
-  const [attempt, setAttempt] = useState(0);
-  useEffect(() => {
-    let live = true;
-    setState((previous) => ({ ...previous, loading: true, error: "" }));
-    fetchStorefrontProducts(filters).then((products) => {
-      if (live) setState({ products, loading: false, error: "" });
-    }).catch((error) => {
-      if (live) setState({ products: [], loading: false, error: error.message || "PRODUCTS COULD NOT BE LOADED" });
-    });
-    return () => { live = false; };
-  }, [filters, attempt]);
-  return { ...state, retry: () => setAttempt((value) => value + 1) };
+  const query = useProducts(HOME_PRODUCTS_FILTERS);
+  const allProducts = query.data || [];
+  const products = filters.section
+    ? allProducts.filter((product) => product.section === filters.section)
+    : filters.category
+      ? allProducts.filter((product) => product.category === filters.category)
+      : allProducts;
+  return { products: products.slice(0, filters.section ? 50 : filters.category ? 12 : 14), loading: query.isPending, error: query.error?.message || "", retry: query.refetch };
 }
 
 function ProductSection({ config, cover }) {

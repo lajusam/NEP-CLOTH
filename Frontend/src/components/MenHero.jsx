@@ -126,6 +126,10 @@ export default function MenHero({
       <img
         ref={imgRef}
         src={imageSrc}
+        srcSet="/optimized/images/male-section-480.webp 480w, /optimized/images/male-section-768.webp 768w"
+        sizes="100vw"
+        width="1264"
+        height="848"
         alt={alt}
         className="men-hero-img"
         loading="eager"

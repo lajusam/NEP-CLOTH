@@ -1,28 +1,9 @@
-import { useEffect, useState, useCallback } from "react";
 import ProductGrid from "./ProductGrid";
-import { fetchProducts } from "../lib/api";
+import useProducts from "../hooks/useProducts";
 
 export default function CollectionsGrid() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const loadProducts = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const data = await fetchProducts({ limit: 14 });
-      setProducts(data);
-    } catch (err) {
-      setError(err.message || "Failed to load products");
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    loadProducts();
-  }, [loadProducts]);
+  const { data = [], isPending: loading, error, refetch } = useProducts({ limit: 50 });
+  const products = data.slice(0, 14);
 
   return (
     <>
@@ -34,9 +15,9 @@ export default function CollectionsGrid() {
       ) : error ? (
         <div className="w-full py-[120px] bg-stark-white flex flex-col items-center justify-center gap-4 text-center px-6">
           <h3 className="font-display text-[36px] text-black">UNABLE TO LOAD PRODUCTS</h3>
-          <p className="font-sans text-[13px] text-[#666] max-w-md">{error}</p>
+          <p className="font-sans text-[13px] text-[#666] max-w-md">{error.message || "Failed to load products"}</p>
           <button
-            onClick={loadProducts}
+            onClick={() => refetch()}
             className="mt-2 px-8 py-3 bg-black text-white font-sans text-[11px] uppercase tracking-[0.15em] hover:bg-[#333] transition-colors cursor-pointer"
           >
             RETRY

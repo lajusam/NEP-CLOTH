@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { useCart } from "../context/CartContext";
+import ResponsiveImage from "./ResponsiveImage";
 import { formatPrice } from "../lib/api";
 
 export default function CartDrawer() {
@@ -146,9 +147,12 @@ export default function CartDrawer() {
                   {/* Thumbnail */}
                   <div className="w-20 h-28 bg-zinc-100 flex-shrink-0 overflow-hidden border border-zinc-200 relative">
                     {item.image ? (
-                      <img
+                      <ResponsiveImage
                         src={item.image}
                         alt={item.name}
+                        width={160}
+                        height={224}
+                        sizes="80px"
                         className={`w-full h-full object-cover object-top ${
                           isOutOfStock ? "grayscale opacity-50" : ""
                         }`}

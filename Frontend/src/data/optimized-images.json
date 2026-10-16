@@ -1,0 +1,1574 @@
+{
+  "/caps/ald.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/caps/ald-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/caps/ald-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/caps/baseball cap in black.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/caps/baseball cap in black-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/caps/baseball cap in black-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/caps/capcover-1280.webp": {
+    "webp": [
+      {
+        "src": "/optimized/caps/capcover-1280-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/caps/capcover-1280-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/caps/capcover-1280-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/caps/capcover-1280-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/caps/capcover-1920.webp": {
+    "webp": [
+      {
+        "src": "/optimized/caps/capcover-1920-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/caps/capcover-1920-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/optimized/caps/capcover-1920-1280.webp",
+        "width": 1280
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/caps/capcover-1920-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/caps/capcover-1920-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/optimized/caps/capcover-1920-1280.avif",
+        "width": 1280
+      }
+    ]
+  },
+  "/caps/capcover-640.webp": {
+    "webp": [
+      {
+        "src": "/optimized/caps/capcover-640-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/caps/capcover-640-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/caps/capcover.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/caps/capcover-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/caps/capcover-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/caps/ctrz.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/caps/ctrz-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/caps/ctrz-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/caps/Depop Men's Hat.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/caps/Depop Men's Hat-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/caps/Depop Men's Hat-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/caps/Depop Men's Hat-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/caps/Depop Men's Hat-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/caps/drepro.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/caps/drepro-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/caps/drepro-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/caps/drepro-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/caps/drepro-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/caps/rockshank.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/caps/rockshank-405.webp",
+        "width": 405
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/caps/rockshank-405.avif",
+        "width": 405
+      }
+    ]
+  },
+  "/caps/sharks cap 1.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/caps/sharks cap 1-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/caps/sharks cap 1-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/caps/vintagecap.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/caps/vintagecap-jpg-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/caps/vintagecap-jpg-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/caps/vintagecap.webp": {
+    "webp": [
+      {
+        "src": "/optimized/caps/vintagecap-webp-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/caps/vintagecap-webp-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/caps/winter cap 1.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/caps/winter cap 1-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/caps/winter cap 1-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/editorial/men/56af69813fa9f9e5fe24af2edcb21709.webp": {
+    "webp": [
+      {
+        "src": "/optimized/editorial/men/56af69813fa9f9e5fe24af2edcb21709-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/editorial/men/56af69813fa9f9e5fe24af2edcb21709-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/editorial/men/56af69813fa9f9e5fe24af2edcb21709-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/editorial/men/56af69813fa9f9e5fe24af2edcb21709-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/editorial/men/8decc81ff4f1f962b1e3ec531f88dcd8.webp": {
+    "webp": [
+      {
+        "src": "/optimized/editorial/men/8decc81ff4f1f962b1e3ec531f88dcd8-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/editorial/men/8decc81ff4f1f962b1e3ec531f88dcd8-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/editorial/men/8decc81ff4f1f962b1e3ec531f88dcd8-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/editorial/men/8decc81ff4f1f962b1e3ec531f88dcd8-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/editorial/men/dfda7a099c575897bf70bf74dda2446d.webp": {
+    "webp": [
+      {
+        "src": "/optimized/editorial/men/dfda7a099c575897bf70bf74dda2446d-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/editorial/men/dfda7a099c575897bf70bf74dda2446d-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/editorial/women/bfe14a2fff3ca1ca0adf0b341b61d0d3.webp": {
+    "webp": [
+      {
+        "src": "/optimized/editorial/women/bfe14a2fff3ca1ca0adf0b341b61d0d3-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/editorial/women/bfe14a2fff3ca1ca0adf0b341b61d0d3-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/editorial/women/e1d45969d03757b28c271fe12e32c020.webp": {
+    "webp": [
+      {
+        "src": "/optimized/editorial/women/e1d45969d03757b28c271fe12e32c020-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/editorial/women/e1d45969d03757b28c271fe12e32c020-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/herosectionimg/hero-clean.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/herosectionimg/hero-clean-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/herosectionimg/hero-clean-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/optimized/herosectionimg/hero-clean-1280.webp",
+        "width": 1280
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/herosectionimg/hero-clean-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/herosectionimg/hero-clean-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/optimized/herosectionimg/hero-clean-1280.avif",
+        "width": 1280
+      }
+    ]
+  },
+  "/herosectionimg/hero-reference.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/herosectionimg/hero-reference-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/herosectionimg/hero-reference-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/herosectionimg/hero-reference-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/herosectionimg/hero-reference-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/herosectionimg/Malesection.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/herosectionimg/Malesection-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/herosectionimg/Malesection-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/herosectionimg/Malesection-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/herosectionimg/Malesection-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/herosectionimg/womensection.png": {
+    "webp": [
+      {
+        "src": "/optimized/herosectionimg/womensection-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/herosectionimg/womensection-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/optimized/herosectionimg/womensection-1280.webp",
+        "width": 1280
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/herosectionimg/womensection-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/herosectionimg/womensection-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/optimized/herosectionimg/womensection-1280.avif",
+        "width": 1280
+      }
+    ]
+  },
+  "/images/0d98c51055dec2371249892908dc4061.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/0d98c51055dec2371249892908dc4061-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/0d98c51055dec2371249892908dc4061-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/images/Aelfric Eden Mens Wide Leg Sweatpants.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/Aelfric Eden Mens Wide Leg Sweatpants-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/Aelfric Eden Mens Wide Leg Sweatpants-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/images/ballon-washed jenas.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/ballon-washed jenas-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/ballon-washed jenas-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/images/Blue Striped Shirt with Clean Summer Vibes.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/Blue Striped Shirt with Clean Summer Vibes-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/Blue Striped Shirt with Clean Summer Vibes-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/images/Burgundy crop top.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/Burgundy crop top-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/Burgundy crop top-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/images/Cropped NIKE.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/Cropped NIKE-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/Cropped NIKE-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/images/Dames T-shirt met bloemenprint, raglan korte mouwen, halterhals en 2-in-1 ontwerp.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/Dames T-shirt met bloemenprint, raglan korte mouwen, halterhals en 2-in-1 ontwerp-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/Dames T-shirt met bloemenprint, raglan korte mouwen, halterhals en 2-in-1 ontwerp-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/Dames T-shirt met bloemenprint, raglan korte mouwen, halterhals en 2-in-1 ontwerp-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/Dames T-shirt met bloemenprint, raglan korte mouwen, halterhals en 2-in-1 ontwerp-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/images/Dark Punk Stehkragen Patchwork Jacketjpg.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/Dark Punk Stehkragen Patchwork Jacketjpg-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/Dark Punk Stehkragen Patchwork Jacketjpg-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/Dark Punk Stehkragen Patchwork Jacketjpg-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/Dark Punk Stehkragen Patchwork Jacketjpg-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/images/download.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/download-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/download-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/download-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/download-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/images/Leilani Washed Baggy Jeansjpg.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/Leilani Washed Baggy Jeansjpg-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/Leilani Washed Baggy Jeansjpg-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/Leilani Washed Baggy Jeansjpg-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/Leilani Washed Baggy Jeansjpg-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/images/male-section.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/male-section-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/male-section-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/male-section-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/male-section-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/images/Men's Short-Sleeve Cropped Workwear Graphic Button-Up Shirt.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/Men's Short-Sleeve Cropped Workwear Graphic Button-Up Shirt-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/Men's Short-Sleeve Cropped Workwear Graphic Button-Up Shirt-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/Men's Short-Sleeve Cropped Workwear Graphic Button-Up Shirt-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/Men's Short-Sleeve Cropped Workwear Graphic Button-Up Shirt-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/images/men1.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/men1-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/men1-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/men1-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/men1-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/images/men2.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/men2-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/men2-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/images/men3.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/men3-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/men3-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/men3-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/men3-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/images/Mocha Butterfly Y2K Grunge Outfit 🦋🤎.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/Mocha Butterfly Y2K Grunge Outfit 🦋🤎-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/Mocha Butterfly Y2K Grunge Outfit 🦋🤎-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/images/Retro 80s Stripe PoloLong Sleeve Style.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/Retro 80s Stripe PoloLong Sleeve Style-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/Retro 80s Stripe PoloLong Sleeve Style-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/images/Ribbed Collar Cropped Bomber Flight Jacket (Subversive & Archive).jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/Ribbed Collar Cropped Bomber Flight Jacket (Subversive & Archive)-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/Ribbed Collar Cropped Bomber Flight Jacket (Subversive & Archive)-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/images/Vrouwen Grafische Print T-shirt Vintage Harajuku Y2k Tee Top Shoujo Meisje Esthetische Oversize.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/Vrouwen Grafische Print T-shirt Vintage Harajuku Y2k Tee Top Shoujo Meisje Esthetische Oversize-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/Vrouwen Grafische Print T-shirt Vintage Harajuku Y2k Tee Top Shoujo Meisje Esthetische Oversize-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/Vrouwen Grafische Print T-shirt Vintage Harajuku Y2k Tee Top Shoujo Meisje Esthetische Oversize-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/Vrouwen Grafische Print T-shirt Vintage Harajuku Y2k Tee Top Shoujo Meisje Esthetische Oversize-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/images/womean jeans.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/womean jeans-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/womean jeans-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/images/women-section.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/women-section-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/women-section-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/optimized/images/women-section-1280.webp",
+        "width": 1280
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/women-section-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/images/women-section-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/optimized/images/women-section-1280.avif",
+        "width": 1280
+      }
+    ]
+  },
+  "/images/women1.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/images/women1-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/images/women1-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/mencloth/cloths1/Aelfric Eden Mens Wide Leg Sweatpants.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/mencloth/cloths1/Aelfric Eden Mens Wide Leg Sweatpants-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/mencloth/cloths1/Aelfric Eden Mens Wide Leg Sweatpants-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/mencloth/cloths1/ballon-washed jenas.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/mencloth/cloths1/ballon-washed jenas-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/mencloth/cloths1/ballon-washed jenas-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/mencloth/cloths1/Blue Striped Shirt with Clean Summer Vibes.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/mencloth/cloths1/Blue Striped Shirt with Clean Summer Vibes-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/mencloth/cloths1/Blue Striped Shirt with Clean Summer Vibes-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/mencloth/cloths1/Dark Punk Stehkragen Patchwork Jacketjpg.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/mencloth/cloths1/Dark Punk Stehkragen Patchwork Jacketjpg-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/mencloth/cloths1/Dark Punk Stehkragen Patchwork Jacketjpg-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/mencloth/cloths1/Dark Punk Stehkragen Patchwork Jacketjpg-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/mencloth/cloths1/Dark Punk Stehkragen Patchwork Jacketjpg-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/mencloth/cloths1/Men's Short-Sleeve Cropped Workwear Graphic Button-Up Shirt.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/mencloth/cloths1/Men's Short-Sleeve Cropped Workwear Graphic Button-Up Shirt-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/mencloth/cloths1/Men's Short-Sleeve Cropped Workwear Graphic Button-Up Shirt-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/mencloth/cloths1/Men's Short-Sleeve Cropped Workwear Graphic Button-Up Shirt-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/mencloth/cloths1/Men's Short-Sleeve Cropped Workwear Graphic Button-Up Shirt-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/mencloth/cloths1/Retro 80s Stripe PoloLong Sleeve Style.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/mencloth/cloths1/Retro 80s Stripe PoloLong Sleeve Style-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/mencloth/cloths1/Retro 80s Stripe PoloLong Sleeve Style-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/mencloth/cloths1/Ribbed Collar Cropped Bomber Flight Jacket (Subversive & Archive).jpg": {
+    "webp": [
+      {
+        "src": "/optimized/mencloth/cloths1/Ribbed Collar Cropped Bomber Flight Jacket (Subversive & Archive)-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/mencloth/cloths1/Ribbed Collar Cropped Bomber Flight Jacket (Subversive & Archive)-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/mencloth/menside/56af69813fa9f9e5fe24af2edcb21709.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/mencloth/menside/56af69813fa9f9e5fe24af2edcb21709-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/mencloth/menside/56af69813fa9f9e5fe24af2edcb21709-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/mencloth/menside/56af69813fa9f9e5fe24af2edcb21709-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/mencloth/menside/56af69813fa9f9e5fe24af2edcb21709-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/mencloth/menside/8decc81ff4f1f962b1e3ec531f88dcd8.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/mencloth/menside/8decc81ff4f1f962b1e3ec531f88dcd8-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/mencloth/menside/8decc81ff4f1f962b1e3ec531f88dcd8-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/mencloth/menside/8decc81ff4f1f962b1e3ec531f88dcd8-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/mencloth/menside/8decc81ff4f1f962b1e3ec531f88dcd8-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/mencloth/menside/aa0771966b0d5b5060bf2c658c04b189.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/mencloth/menside/aa0771966b0d5b5060bf2c658c04b189-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/mencloth/menside/aa0771966b0d5b5060bf2c658c04b189-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/mencloth/menside/dfda7a099c575897bf70bf74dda2446d.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/mencloth/menside/dfda7a099c575897bf70bf74dda2446d-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/mencloth/menside/dfda7a099c575897bf70bf74dda2446d-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/mencloth/menside/men1.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/mencloth/menside/men1-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/mencloth/menside/men1-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/mencloth/menside/men1-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/mencloth/menside/men1-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/mencloth/menside/men2.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/mencloth/menside/men2-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/mencloth/menside/men2-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/mencloth/menside/men3.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/mencloth/menside/men3-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/mencloth/menside/men3-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/mencloth/menside/men3-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/mencloth/menside/men3-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/womencloth/Bags/Alagbero .jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/Alagbero -480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/Alagbero -480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/Bags/bagcover-1280.webp": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-1280-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-1280-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-1280-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-1280-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/womencloth/Bags/bagcover-1920.webp": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-1920-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-1920-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-1920-1280.webp",
+        "width": 1280
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-1920-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-1920-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-1920-1280.avif",
+        "width": 1280
+      }
+    ]
+  },
+  "/womencloth/Bags/bagcover-640.webp": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-640-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-640-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/Bags/bagcover.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/Bags/bagcover-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/womencloth/Bags/Dior Saddle & Luxury Bags Style Inspiration.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/Dior Saddle & Luxury Bags Style Inspiration-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/Dior Saddle & Luxury Bags Style Inspiration-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/Bags/Elegant Coach Brown Suede Shoulder Bag.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/Elegant Coach Brown Suede Shoulder Bag-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/Bags/Elegant Coach Brown Suede Shoulder Bag-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/Elegant Coach Brown Suede Shoulder Bag-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/Bags/Elegant Coach Brown Suede Shoulder Bag-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/womencloth/Bags/Elegant Leather Purse Authentic Design Chic Leather Brown Bag.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/Elegant Leather Purse Authentic Design Chic Leather Brown Bag-jpg-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/Elegant Leather Purse Authentic Design Chic Leather Brown Bag-jpg-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/Bags/Elegant Leather Purse Authentic Design Chic Leather Brown Bag.webp": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/Elegant Leather Purse Authentic Design Chic Leather Brown Bag-webp-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/Elegant Leather Purse Authentic Design Chic Leather Brown Bag-webp-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/Bags/JAKIORAMOUR.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/JAKIORAMOUR-jpg-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/JAKIORAMOUR-jpg-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/Bags/JAKIORAMOUR.webp": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/JAKIORAMOUR-webp-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/JAKIORAMOUR-webp-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/Bags/juststar.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/juststar-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/juststar-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/Bags/Love the shade of Maroon.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/Love the shade of Maroon-jpg-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/Love the shade of Maroon-jpg-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/Bags/Love the shade of Maroon.webp": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/Love the shade of Maroon-webp-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/Love the shade of Maroon-webp-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/Bags/Stylish Handmade Leather Brown Bag Premium Handmade Brown Leather Bag Elegant Leather Purse.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/Stylish Handmade Leather Brown Bag Premium Handmade Brown Leather Bag Elegant Leather Purse-jpg-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/Stylish Handmade Leather Brown Bag Premium Handmade Brown Leather Bag Elegant Leather Purse-jpg-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/Bags/Stylish Handmade Leather Brown Bag Premium Handmade Brown Leather Bag Elegant Leather Purse.webp": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/Stylish Handmade Leather Brown Bag Premium Handmade Brown Leather Bag Elegant Leather Purse-webp-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/Stylish Handmade Leather Brown Bag Premium Handmade Brown Leather Bag Elegant Leather Purse-webp-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/Bags/Vintage Guess Bag Autumn Brown Suède Gold Detailed Rare Shoulderbag Work Office.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/Vintage Guess Bag Autumn Brown Suède Gold Detailed Rare Shoulderbag Work Office-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/Vintage Guess Bag Autumn Brown Suède Gold Detailed Rare Shoulderbag Work Office-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/Bags/y2k bags.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/Bags/y2k bags-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/Bags/y2k bags-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/cloth2/Burgundy crop top.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/cloth2/Burgundy crop top-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/cloth2/Burgundy crop top-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/cloth2/Cropped NIKE.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/cloth2/Cropped NIKE-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/cloth2/Cropped NIKE-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/cloth2/Dames T-shirt met bloemenprint, raglan korte mouwen, halterhals en 2-in-1 ontwerp.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/cloth2/Dames T-shirt met bloemenprint, raglan korte mouwen, halterhals en 2-in-1 ontwerp-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/cloth2/Dames T-shirt met bloemenprint, raglan korte mouwen, halterhals en 2-in-1 ontwerp-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/cloth2/Dames T-shirt met bloemenprint, raglan korte mouwen, halterhals en 2-in-1 ontwerp-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/cloth2/Dames T-shirt met bloemenprint, raglan korte mouwen, halterhals en 2-in-1 ontwerp-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/womencloth/cloth2/Leilani Washed Baggy Jeansjpg.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/cloth2/Leilani Washed Baggy Jeansjpg-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/cloth2/Leilani Washed Baggy Jeansjpg-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/cloth2/Leilani Washed Baggy Jeansjpg-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/cloth2/Leilani Washed Baggy Jeansjpg-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/womencloth/cloth2/Mocha Butterfly Y2K Grunge Outfit 🦋🤎.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/cloth2/Mocha Butterfly Y2K Grunge Outfit 🦋🤎-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/cloth2/Mocha Butterfly Y2K Grunge Outfit 🦋🤎-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/cloth2/Vrouwen Grafische Print T-shirt Vintage Harajuku Y2k Tee Top Shoujo Meisje Esthetische Oversize.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/cloth2/Vrouwen Grafische Print T-shirt Vintage Harajuku Y2k Tee Top Shoujo Meisje Esthetische Oversize-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/cloth2/Vrouwen Grafische Print T-shirt Vintage Harajuku Y2k Tee Top Shoujo Meisje Esthetische Oversize-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/cloth2/Vrouwen Grafische Print T-shirt Vintage Harajuku Y2k Tee Top Shoujo Meisje Esthetische Oversize-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/cloth2/Vrouwen Grafische Print T-shirt Vintage Harajuku Y2k Tee Top Shoujo Meisje Esthetische Oversize-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/womencloth/cloth2/womean jeans.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/cloth2/womean jeans-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/cloth2/womean jeans-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/womenside/0d98c51055dec2371249892908dc4061.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/womenside/0d98c51055dec2371249892908dc4061-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/womenside/0d98c51055dec2371249892908dc4061-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/womenside/aa0771966b0d5b5060bf2c658c04b189.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/womenside/aa0771966b0d5b5060bf2c658c04b189-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/womenside/aa0771966b0d5b5060bf2c658c04b189-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/womenside/bfe14a2fff3ca1ca0adf0b341b61d0d3.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/womenside/bfe14a2fff3ca1ca0adf0b341b61d0d3-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/womenside/bfe14a2fff3ca1ca0adf0b341b61d0d3-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/womenside/download.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/womenside/download-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/womenside/download-768.webp",
+        "width": 768
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/womenside/download-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/optimized/womencloth/womenside/download-768.avif",
+        "width": 768
+      }
+    ]
+  },
+  "/womencloth/womenside/e1d45969d03757b28c271fe12e32c020.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/womenside/e1d45969d03757b28c271fe12e32c020-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/womenside/e1d45969d03757b28c271fe12e32c020-480.avif",
+        "width": 480
+      }
+    ]
+  },
+  "/womencloth/womenside/women1.jpg": {
+    "webp": [
+      {
+        "src": "/optimized/womencloth/womenside/women1-480.webp",
+        "width": 480
+      }
+    ],
+    "avif": [
+      {
+        "src": "/optimized/womencloth/womenside/women1-480.avif",
+        "width": 480
+      }
+    ]
+  }
+}

@@ -6,6 +6,7 @@ import AdminNumberStepper from './ui/AdminNumberStepper';
 import AdminButton from './ui/AdminButton';
 import { AdminAlert, AdminEmptyState } from './ui/AdminFeedback';
 import { useAdminToast } from './ui/useAdminToast';
+import ResponsiveImage from '../ResponsiveImage';
 
 const columns = ['Product', 'Variant', 'SKU', 'Section', 'Category', 'Stock quantity', 'Status', 'Quick update'];
 
@@ -119,7 +120,7 @@ export default function InventoryTable({
                   >
                     {/* Product Name */}
                     <td className="font-sans text-[14px] text-obsidian px-6 py-4 whitespace-nowrap font-medium">
-                      <div className="admin-inventory-product"><span className="admin-inventory-thumb">{item.image ? <img src={item.image} alt="" /> : item.productName.slice(0, 2).toUpperCase()}</span><span title={item.productName} className="admin-name-truncate">{item.productName}</span></div>
+                      <div className="admin-inventory-product"><span className="admin-inventory-thumb">{item.image ? <ResponsiveImage src={item.image} alt="" width={48} height={60} sizes="48px" /> : item.productName.slice(0, 2).toUpperCase()}</span><span title={item.productName} className="admin-name-truncate">{item.productName}</span></div>
                       {!item.active && (
                         <span className="ml-2 font-sans text-[10px] text-secondary uppercase tracking-widest border border-obsidian/10 px-1 py-0.5">
                           Archived

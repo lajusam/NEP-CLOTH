@@ -7,7 +7,6 @@
 /* ── FONT IMPORT ─────────────────────────────────────────────────────────── */
 /* Variable Google font: Archivo with width axis (62.5% - 125%) & weights 700-800.
    Fallback: Syne (geometric sans) */
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62.5..125,700..800&family=Syne:wght@700;800&display=swap');
 
 /* ── 1. WRAPPER CONTAINER ────────────────────────────────────────────────── */
 .men-hero-wrapper {

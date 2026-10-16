@@ -124,6 +124,12 @@ export default function ScrollHero() {
       <img
         data-hero-model
         src={IMAGES.heroClean}
+        srcSet="/optimized/herosectionimg/hero-clean-480.webp 480w, /optimized/herosectionimg/hero-clean-768.webp 768w, /optimized/herosectionimg/hero-clean-1280.webp 1280w"
+        sizes="100vw"
+        width="1365"
+        height="768"
+        fetchPriority="high"
+        decoding="async"
         alt="Nep Cloth Hero"
         className="hero-model-img"
       />

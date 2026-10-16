@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "../components/Footer";
@@ -7,6 +8,7 @@ import ReviewsSection from "../components/reviews/ReviewsSection";
 import StarRating from "../components/reviews/StarRating";
 import { fetchProductBySlug, fetchProducts, formatPrice, getMainImage, getModelImage } from "../lib/api";
 import { useCart } from "../context/CartContext";
+import ResponsiveImage from "../components/ResponsiveImage";
 
 // Backward compatibility map for old IDs like "m1", "w1"
 const OLD_ID_MAP = {
@@ -40,11 +42,23 @@ export default function ProductPage() {
 
   const location = useLocation();
   const navigate = useNavigate();
+  const [relatedVisible, setRelatedVisible] = useState(false);
 
-  const [product, setProduct] = useState(location.state?.product || null);
-  const [loading, setLoading] = useState(!location.state?.product);
-  const [error, setError] = useState(null);
-  const [relatedProducts, setRelatedProducts] = useState([]);
+  const productQuery = useQuery({
+    queryKey: ["product", effectiveSlug],
+    queryFn: ({ signal }) => fetchProductBySlug(effectiveSlug, { signal }),
+    initialData: location.state?.product?.slug === effectiveSlug ? location.state.product : undefined,
+  });
+  const product = productQuery.data;
+  const loading = productQuery.isPending;
+  const error = productQuery.error;
+  const relatedQuery = useQuery({
+    queryKey: ["products", { section: product?.section, limit: 6 }],
+    queryFn: ({ signal }) => fetchProducts({ section: product.section, limit: 6, signal }),
+    enabled: Boolean(product?.section && relatedVisible),
+    select: (items) => items.filter((item) => item.slug !== product.slug && item.id !== product.id).slice(0, 4),
+  });
+  const relatedProducts = relatedQuery.data || [];
 
   const [mainImage, setMainImage] = useState("");
   const [selectedSize, setSelectedSize] = useState("");
@@ -61,54 +75,35 @@ export default function ProductPage() {
   const relatedRef = useRef(null);
   const pageRef = useRef(null);
 
+  useEffect(() => {
+    const element = relatedRef.current;
+    if (!element || !("IntersectionObserver" in window)) {
+      setRelatedVisible(true);
+      return undefined;
+    }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setRelatedVisible(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: "600px" });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [effectiveSlug]);
+
   // Scroll to top on navigation
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [effectiveSlug]);
 
   // Fetch product and related products
-  const loadProductData = useCallback(async () => {
-    if (!effectiveSlug) return;
-    setLoading(true);
-    setError(null);
-    try {
-      const data = await fetchProductBySlug(effectiveSlug);
-      setProduct(data);
-      const initialImg = getMainImage(data);
-      setMainImage(initialImg);
-
-      // Default size & color from available variants
-      if (Array.isArray(data.variants) && data.variants.length > 0) {
-        const inStockVariant = data.variants.find((v) => v.stock > 0) || data.variants[0];
-        setSelectedSize(inStockVariant.size || "");
-        setSelectedColor(inStockVariant.color || "");
-      }
-
-      // Fetch related items from the same section
-      if (data.section) {
-        fetchProducts({ section: data.section, limit: 6 })
-          .then((items) => {
-            setRelatedProducts(
-              items.filter((p) => p.slug !== data.slug && p.id !== data.id).slice(0, 4)
-            );
-          })
-          .catch(() => {});
-      }
-    } catch (err) {
-      setError(err.message || "Failed to load product");
-    } finally {
-      setLoading(false);
-    }
-  }, [effectiveSlug]);
-
-  useEffect(() => {
-    loadProductData();
-  }, [loadProductData]);
-
   // Sync main image when product changes
   useEffect(() => {
     if (product) {
       setMainImage(getMainImage(product));
+      const availableVariant = product.variants?.find((variant) => variant.stock > 0) || product.variants?.[0];
+      setSelectedSize(availableVariant?.size || "");
+      setSelectedColor(availableVariant?.color || "");
       setBagText("ADD TO BAG");
       setOpenAccordion(null);
     }
@@ -210,11 +205,11 @@ export default function ProductPage() {
           PRODUCT NOT FOUND
         </h2>
         <p style={{ fontFamily: "'Satoshi', sans-serif", fontSize: "14px", color: "#666", maxWidth: "420px", margin: "0 0 28px" }}>
-          {error}
+          {error.message || "Failed to load product"}
         </p>
         <div style={{ display: "flex", gap: "16px" }}>
           <button
-            onClick={loadProductData}
+            onClick={() => productQuery.refetch()}
             style={{
               padding: "14px 32px",
               background: "#000",
@@ -353,9 +348,14 @@ export default function ProductPage() {
             ref={mainImgRef}
             style={{ width: "100%", aspectRatio: "2/3", overflow: "hidden", marginBottom: "16px" }}
           >
-            <img
+            <ResponsiveImage
               src={mainImage}
               alt={product.name}
+              width={900}
+              height={1350}
+              sizes="(max-width: 768px) 100vw, 55vw"
+              loading="eager"
+              fetchPriority="high"
               style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }}
             />
           </div>
@@ -365,6 +365,7 @@ export default function ProductPage() {
               <button
                 key={i}
                 onClick={() => handleThumbClick(img)}
+                aria-label={`View product image ${i + 1}`}
                 style={{
                   width: "80px",
                   height: "80px",
@@ -377,7 +378,7 @@ export default function ProductPage() {
                   transition: "all 0.2s",
                 }}
               >
-                <img src={img} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
+                <ResponsiveImage src={img} alt="" width={160} height={160} sizes="80px" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
               </button>
             ))}
           </div>
@@ -631,9 +632,12 @@ export default function ProductPage() {
           </p>
         </div>
         <div className="story-right" style={{ flex: 1, position: "relative" }}>
-          <img
+          <ResponsiveImage
             src={getModelImage(product) || getMainImage(product)}
             alt={product.name}
+            width={900}
+            height={1200}
+            sizes="(max-width: 768px) 100vw, 50vw"
             style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
           />
         </div>
@@ -653,9 +657,13 @@ export default function ProductPage() {
               style={{ width: "280px", flexShrink: 0, cursor: "pointer" }}
             >
               <div style={{ width: "100%", aspectRatio: "3/4", overflow: "hidden", border: "0.5px solid #000" }}>
-                <img
+                <ResponsiveImage
                   src={getMainImage(p)}
                   alt={p.name}
+                  width={560}
+                  height={740}
+                  sizes="280px"
+                  loading="lazy"
                   style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", transition: "transform 0.4s" }}
                   onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.04)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}

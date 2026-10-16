@@ -30,6 +30,7 @@ function dateLabel(date) {
 export default function ReviewsSection({ product }) {
   const { user } = useAuth();
   const rootRef = useRef(null);
+  const [visible, setVisible] = useState(false);
   const [sort, setSort] = useState("newest");
   const [items, setItems] = useState([]);
   const [summary, setSummary] = useState({ average: null, count: 0, distribution: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 } });
@@ -52,6 +53,23 @@ export default function ReviewsSection({ product }) {
   const [deleteOpen, setDeleteOpen] = useState(false);
   const [expanded, setExpanded] = useState(() => new Set());
   const [reportedIds, setReportedIds] = useState(() => new Set());
+
+  useEffect(() => {
+    const element = rootRef.current;
+    setVisible(false);
+    if (!element || !("IntersectionObserver" in window)) {
+      setVisible(true);
+      return undefined;
+    }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: "600px" });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [product.slug]);
 
   const refreshReviews = useCallback(async (nextSort = sort, nextPage = 1, append = false) => {
     if (append) setLoadingMore(true);
@@ -80,14 +98,15 @@ export default function ReviewsSection({ product }) {
     }
   }, [product.slug]);
 
-  useEffect(() => { refreshReviews(sort, 1); }, [refreshReviews, sort]);
+  useEffect(() => { if (visible) refreshReviews(sort, 1); }, [refreshReviews, sort, visible]);
   useEffect(() => {
+    if (!visible) return;
     if (user) refreshEligibility();
     else {
       setEligibility({ canReview: false, reason: "login_required", myReview: null });
       setEligibilityError("");
     }
-  }, [user, refreshEligibility]);
+  }, [user, refreshEligibility, visible]);
   useEffect(() => {
     if (!toast) return undefined;
     const timer = window.setTimeout(() => setToast(""), 3500);
@@ -171,7 +190,7 @@ export default function ReviewsSection({ product }) {
         <h2>REVIEWS</h2>
       </header>
 
-      {loading ? <div className="reviews-summary-skeleton" aria-label="Loading review summary" aria-busy="true"><span /><span /><span /></div> : <div className="reviews-summary">
+      {loading ? <div className="reviews-summary-skeleton" role="status" aria-label="Loading review summary" aria-busy="true"><span /><span /><span /></div> : <div className="reviews-summary">
         <div className="reviews-summary-score">
           {summary.count > 0 ? <><strong>{ratingAverage.toFixed(1)}</strong><StarRating value={ratingAverage} count={summary.count} /><span>BASED ON {summary.count} {summary.count === 1 ? "REVIEW" : "REVIEWS"}</span></> : <><strong>—</strong><span>NO REVIEWS YET</span></>}
         </div>
@@ -194,7 +213,7 @@ export default function ReviewsSection({ product }) {
       </div>
 
       {error && <div className="reviews-error" role="alert"><p>{error}</p><button type="button" onClick={() => refreshReviews(sort, 1)}>RETRY</button></div>}
-      {loading && !items.length ? <div className="reviews-list-skeleton" aria-label="Loading reviews" aria-busy="true">{[0, 1, 2].map((item) => <div key={item}><span /><span /><span /></div>)}</div> : null}
+      {loading && !items.length ? <div className="reviews-list-skeleton" role="status" aria-label="Loading reviews" aria-busy="true">{[0, 1, 2].map((item) => <div key={item}><span /><span /><span /></div>)}</div> : null}
       {!loading && !error && items.length === 0 && <div className="reviews-empty"><strong>NO REVIEWS YET</strong><p>Be the first to share your experience with this piece.</p></div>}
       <div className="reviews-list">
         {items.map((review) => {

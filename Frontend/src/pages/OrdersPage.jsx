@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { fetchMyOrders, formatPrice } from "../lib/api";
 import Footer from "../components/Footer";
@@ -12,27 +13,15 @@ const STATUS_BADGE_MAP = {
 };
 
 export default function OrdersPage() {
-  const [orders, setOrders] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { data: orders = [], isPending: loading, error, refetch } = useQuery({
+    queryKey: ["orders", "mine"],
+    queryFn: fetchMyOrders,
+    retry: 0,
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    async function loadOrders() {
-      try {
-        setLoading(true);
-        setError(null);
-        const data = await fetchMyOrders();
-        setOrders(data);
-      } catch (err) {
-        setError(err.message || "Failed to load orders");
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadOrders();
   }, []);
 
   return (
@@ -67,10 +56,10 @@ export default function OrdersPage() {
         ) : error ? (
           <div className="p-8 bg-red-50 border-l-4 border-altitude-orange text-center">
             <p className="font-sans text-[13px] text-red-900 uppercase tracking-wider mb-4">
-              {error}
+              {error.message || "Failed to load orders"}
             </p>
             <button
-              onClick={() => window.location.reload()}
+              onClick={() => refetch()}
               className="px-6 py-3 bg-black text-white font-sans text-[11px] uppercase tracking-[0.2em]"
             >
               TRY AGAIN

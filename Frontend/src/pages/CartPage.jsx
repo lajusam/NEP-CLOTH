@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import ResponsiveImage from "../components/ResponsiveImage";
 import { formatPrice } from "../lib/api";
 import Footer from "../components/Footer";
 
@@ -115,9 +116,12 @@ export default function CartPage() {
                     {/* Image */}
                     <div className="w-full sm:w-28 h-40 bg-zinc-100 flex-shrink-0 overflow-hidden border border-zinc-200 relative">
                       {item.image ? (
-                        <img
+                        <ResponsiveImage
                           src={item.image}
                           alt={item.name}
+                          width={224}
+                          height={320}
+                          sizes="112px"
                           className={`w-full h-full object-cover object-top ${
                             isOutOfStock ? "grayscale opacity-50" : ""
                           }`}

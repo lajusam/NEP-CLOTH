@@ -66,7 +66,7 @@ export function getModelImage(product) {
 /**
  * Fetch products list with optional filters and pagination.
  */
-export async function fetchProducts({ section, category, page = 1, limit = 50 } = {}) {
+export async function fetchProducts({ section, category, page = 1, limit = 50, signal } = {}) {
   const params = new URLSearchParams();
   if (section) params.set("section", section);
   if (category) params.set("category", category);
@@ -76,9 +76,9 @@ export async function fetchProducts({ section, category, page = 1, limit = 50 } 
   const query = params.toString();
   const url = `${API_BASE}/products${query ? `?${query}` : ""}`;
 
-  const authHeaders = await getAuthHeaders();
   const res = await fetch(url, {
-    headers: { ...authHeaders },
+    headers: {},
+    signal,
   });
 
   if (!res.ok) {
@@ -93,13 +93,13 @@ export async function fetchProducts({ section, category, page = 1, limit = 50 } 
 /**
  * Fetch single product by slug (with variants).
  */
-export async function fetchProductBySlug(slug) {
+export async function fetchProductBySlug(slug, { signal } = {}) {
   if (!slug) throw new Error("Product slug is required");
 
   const url = `${API_BASE}/products/${encodeURIComponent(slug)}`;
-  const authHeaders = await getAuthHeaders();
   const res = await fetch(url, {
-    headers: { ...authHeaders },
+    headers: {},
+    signal,
   });
 
   if (!res.ok) {

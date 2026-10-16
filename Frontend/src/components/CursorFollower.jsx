@@ -6,73 +6,66 @@ export default function CursorFollower() {
 
   useEffect(() => {
     const cursor = cursorRef.current;
-    if (!cursor) return;
+    if (!cursor || window.matchMedia("(hover: none), (pointer: coarse)").matches) return;
 
     // Move cursor to follow mouse
-    const onMouseMove = (e) => {
-      gsap.to(cursor, {
-        x: e.clientX - 12,
-        y: e.clientY - 12,
-        duration: 0.15,
-        ease: "power2.out",
-      });
+    const moveX = gsap.quickTo(cursor, "x", { duration: 0.15, ease: "power2.out" });
+    const moveY = gsap.quickTo(cursor, "y", { duration: 0.15, ease: "power2.out" });
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "hidden") {
+        moveX.tween.pause();
+        moveY.tween.pause();
+      } else {
+        moveX.tween.resume();
+        moveY.tween.resume();
+      }
+    };
+    const onMouseMove = (event) => {
+      if (document.visibilityState !== "visible") return;
+      moveX(event.clientX - 12);
+      moveY(event.clientY - 12);
     };
 
     // Scale up on interactive elements
     const onMouseEnter = () => {
+      cursor.style.backgroundColor = "#000";
       gsap.to(cursor, {
         scale: 2.5,
-        background: "#000",
-        duration: 0.3,
+        duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 0.3,
         ease: "power2.out",
       });
     };
 
     const onMouseLeave = () => {
+      cursor.style.backgroundColor = "transparent";
       gsap.to(cursor, {
         scale: 1,
-        background: "transparent",
-        duration: 0.3,
+        duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 0.3,
         ease: "power2.out",
       });
     };
 
     document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("visibilitychange", onVisibilityChange);
 
-    // Attach to product cards, buttons, and links
-    const attachInteractive = () => {
-      const els = document.querySelectorAll(
-        ".product-card, .carousel-card, .drawer-product-card, .category-panel, button, a"
-      );
-      els.forEach((el) => {
-        el.addEventListener("mouseenter", onMouseEnter);
-        el.addEventListener("mouseleave", onMouseLeave);
-      });
-      return els;
+    const selector = ".product-card, .carousel-card, .drawer-product-card, .category-panel, button, a";
+    const onPointerOver = (event) => {
+      const target = event.target.closest(selector);
+      if (target && !target.contains(event.relatedTarget)) onMouseEnter();
     };
-
-    // Use MutationObserver to handle dynamically added elements
-    let els = attachInteractive();
-
-    const observer = new MutationObserver(() => {
-      // Detach old
-      els.forEach((el) => {
-        el.removeEventListener("mouseenter", onMouseEnter);
-        el.removeEventListener("mouseleave", onMouseLeave);
-      });
-      // Reattach
-      els = attachInteractive();
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
+    const onPointerOut = (event) => {
+      const target = event.target.closest(selector);
+      if (target && !target.contains(event.relatedTarget)) onMouseLeave();
+    };
+    document.addEventListener("mouseover", onPointerOver, { passive: true });
+    document.addEventListener("mouseout", onPointerOut, { passive: true });
 
     return () => {
       document.removeEventListener("mousemove", onMouseMove);
-      els.forEach((el) => {
-        el.removeEventListener("mouseenter", onMouseEnter);
-        el.removeEventListener("mouseleave", onMouseLeave);
-      });
-      observer.disconnect();
+      document.removeEventListener("mouseover", onPointerOver);
+      document.removeEventListener("mouseout", onPointerOut);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      gsap.killTweensOf(cursor);
     };
   }, []);
 
