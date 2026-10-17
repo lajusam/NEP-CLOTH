@@ -15,6 +15,9 @@ import { invalidatePublicProductCache } from "./lib/publicProductCache.js";
 
 const app = express();
 
+// Vercel overwrites X-Forwarded-For at its edge, so trust only that proxy hop.
+app.set("trust proxy", 1);
+
 app.use((req, res, next) => {
   res.setHeader("Cache-Control", "private, no-store");
   if (req.method !== "GET" && req.method !== "HEAD") {
