@@ -121,18 +121,25 @@ export default function ScrollHero() {
       className="hero-section"
     >
       {/* Model image — z-index 3 (above wordmark) */}
-      <img
-        data-hero-model
-        src={IMAGES.heroClean}
-        srcSet="/optimized/herosectionimg/hero-clean-480.webp 480w, /optimized/herosectionimg/hero-clean-768.webp 768w, /optimized/herosectionimg/hero-clean-1280.webp 1280w"
-        sizes="(max-width: 768px) 1280px, 100vw"
-        width="1365"
-        height="768"
-        fetchPriority="high"
-        decoding="async"
-        alt="Nep Cloth Hero"
-        className="hero-model-img"
-      />
+      <picture>
+        <source
+          media="(max-width: 768px)"
+          srcSet="/optimized/herosectionimg/hero-clean-mobile-480.webp 480w, /optimized/herosectionimg/hero-clean-mobile-768.webp 768w"
+          sizes="100vw"
+        />
+        <img
+          data-hero-model
+          src={IMAGES.heroClean}
+          srcSet="/optimized/herosectionimg/hero-clean-480.webp 480w, /optimized/herosectionimg/hero-clean-768.webp 768w, /optimized/herosectionimg/hero-clean-1280.webp 1280w"
+          sizes="100vw"
+          width="1365"
+          height="768"
+          fetchPriority="high"
+          decoding="async"
+          alt="Nep Cloth Hero"
+          className="hero-model-img"
+        />
+      </picture>
 
       {/* Giant wordmark — z-index 2 (behind model) */}
       <div className="hero-wordmark" aria-hidden="true">

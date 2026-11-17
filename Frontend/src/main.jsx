@@ -12,17 +12,28 @@ const heroPreloads = {
 };
 const hero = heroPreloads[window.location.pathname];
 if (hero) {
-  const preload = document.createElement("link");
-  preload.rel = "preload";
-  preload.as = "image";
-  preload.href = hero[0];
-  preload.setAttribute("imagesrcset", hero[1]);
-  preload.setAttribute(
-    "imagesizes",
-    window.location.pathname === "/" ? "(max-width: 768px) 1280px, 100vw" : "100vw"
-  );
-  preload.fetchPriority = "high";
-  document.head.append(preload);
+  const addHeroPreload = (href, srcset, media) => {
+    const preload = document.createElement("link");
+    preload.rel = "preload";
+    preload.as = "image";
+    preload.href = href;
+    preload.setAttribute("imagesrcset", srcset);
+    preload.setAttribute("imagesizes", "100vw");
+    if (media) preload.media = media;
+    preload.fetchPriority = "high";
+    document.head.append(preload);
+  };
+
+  if (window.location.pathname === "/") {
+    addHeroPreload(
+      "/optimized/herosectionimg/hero-clean-mobile-768.webp",
+      "/optimized/herosectionimg/hero-clean-mobile-480.webp 480w, /optimized/herosectionimg/hero-clean-mobile-768.webp 768w",
+      "(max-width: 768px)"
+    );
+    addHeroPreload(hero[0], hero[1], "(min-width: 769px)");
+  } else {
+    addHeroPreload(hero[0], hero[1]);
+  }
 }
 
 // Register GSAP plugins globally once
