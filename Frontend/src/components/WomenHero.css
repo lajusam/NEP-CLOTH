@@ -209,6 +209,34 @@
   font-style: normal;
 }
 
+@media (max-width: 767px) {
+  .women-hero-wrapper {
+    aspect-ratio: auto;
+    height: min(78svh, 680px);
+    min-height: 440px;
+  }
+
+  .women-hero-img { object-position: 56% center; }
+  .women-hero-gradient { background: linear-gradient(90deg, rgb(0 0 0 / 58%), rgb(0 0 0 / 12%) 82%); }
+
+  .women-hero-quote {
+    top: 12%;
+    left: 6%;
+    width: 88%;
+  }
+
+  .women-hero-quote-line1 { font-size: clamp(21px, 6vw, 32px); }
+  .women-hero-quote-line2 {
+    padding-left: 4vw;
+    margin-top: 4px;
+    font-size: clamp(23px, 7vw, 38px);
+    white-space: normal;
+  }
+
+  .women-hero-rule { width: 42px; margin-top: 12px; }
+  .women-hero-brand { right: 5%; bottom: 4%; font-size: 9px; letter-spacing: 0.25em; }
+}
+
 /* ── 6. WORD SPANS (for GSAP word-level animation) ───────────────────────── */
 .women-hero-word {
   /* Controls display: inline-block so GSAP transforms apply per-word */

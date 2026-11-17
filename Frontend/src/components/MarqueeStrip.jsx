@@ -15,7 +15,7 @@ export default function MarqueeStrip() {
   ));
 
   return (
-    <div className="w-full bg-obsidian text-stark-white py-4 overflow-hidden border-b border-white/20">
+    <div className="marquee-strip w-full bg-obsidian text-stark-white py-4 overflow-hidden border-b border-white/20">
       <div className="whitespace-nowrap flex marquee-text font-sans text-[12px] tracking-[0.15em] uppercase">
         {/* Duplicate content for seamless loop */}
         {content}

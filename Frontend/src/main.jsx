@@ -17,7 +17,10 @@ if (hero) {
   preload.as = "image";
   preload.href = hero[0];
   preload.setAttribute("imagesrcset", hero[1]);
-  preload.setAttribute("imagesizes", "100vw");
+  preload.setAttribute(
+    "imagesizes",
+    window.location.pathname === "/" ? "(max-width: 768px) 1280px, 100vw" : "100vw"
+  );
   preload.fetchPriority = "high";
   document.head.append(preload);
 }

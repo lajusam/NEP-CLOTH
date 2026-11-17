@@ -341,7 +341,7 @@ export default function ProductPage() {
   return (
     <div ref={pageRef}>
       {/* Section 1 — Product Hero */}
-      <section className="container-page product-detail-layout">
+      <section className="container-page product-detail-layout pdp-layout">
         {/* Left — Image Gallery */}
         <div className="product-detail-gallery">
           <div
@@ -392,7 +392,7 @@ export default function ProductPage() {
           </span>
 
           {/* Name */}
-          <h1 className="pdp-animate" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "56px", color: "#000", lineHeight: 0.9, margin: "0 0 16px" }}>
+          <h1 className="pdp-animate pdp-product-title" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "56px", color: "#000", lineHeight: 0.9, margin: "0 0 16px" }}>
             {product.name}
           </h1>
 
@@ -613,6 +613,7 @@ export default function ProductPage() {
       {/* Section 2 — Product Story */}
       <section
         ref={storyRef}
+        className="pdp-story"
         style={{
           width: "100vw",
           height: "60vh",
@@ -621,7 +622,7 @@ export default function ProductPage() {
           overflow: "hidden",
         }}
       >
-        <div className="story-left" style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 80px" }}>
+        <div className="story-left pdp-story-copy" style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 80px" }}>
           <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "72px", color: "#fff", lineHeight: 0.88, margin: "0 0 24px" }}>
             CRAFTED FOR<br />ALTITUDE
           </h2>
@@ -631,7 +632,7 @@ export default function ProductPage() {
             tradition with the precision of European tailoring.
           </p>
         </div>
-        <div className="story-right" style={{ flex: 1, position: "relative" }}>
+        <div className="story-right pdp-story-image" style={{ flex: 1, position: "relative" }}>
           <ResponsiveImage
             src={getModelImage(product) || getMainImage(product)}
             alt={product.name}
@@ -644,11 +645,11 @@ export default function ProductPage() {
       </section>
 
       {/* Section 3 — You May Also Like */}
-      <section ref={relatedRef} style={{ padding: "120px 80px", background: "#fff" }}>
+      <section ref={relatedRef} className="pdp-related" style={{ padding: "120px 80px", background: "#fff" }}>
         <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "64px", color: "#000", margin: "0 0 60px" }}>
           YOU MAY ALSO LIKE
         </h2>
-        <div style={{ display: "flex", gap: "24px", overflowX: "auto" }} className="no-scrollbar">
+        <div style={{ display: "flex", gap: "24px", overflowX: "auto" }} className="no-scrollbar related-track">
           {relatedProducts.map((p) => (
             <div
               key={p.id || p.slug}

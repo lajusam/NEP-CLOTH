@@ -52,7 +52,7 @@ export default function CategoryExplorer() {
       return;
     }
     gsap.to(drawerRef.current, {
-      y: 420,
+      y: drawerRef.current.offsetHeight,
       duration: 0.4,
       ease: "power3.inOut",
       onComplete: () => setActiveGender(null),
@@ -73,7 +73,7 @@ export default function CategoryExplorer() {
       return;
     }
     gsap.to(detailRef.current, {
-      x: 400,
+      x: detailRef.current.offsetWidth,
       duration: 0.4,
       ease: "power3.inOut",
       onComplete: () => setSelectedProduct(null),
@@ -85,7 +85,7 @@ export default function CategoryExplorer() {
     if (activeGender && drawerRef.current) {
       gsap.fromTo(
         drawerRef.current,
-        { y: 420 },
+        { y: drawerRef.current.offsetHeight },
         { y: 0, duration: 0.6, ease: "power3.out" }
       );
     }
@@ -96,7 +96,7 @@ export default function CategoryExplorer() {
     if (selectedProduct && detailRef.current) {
       gsap.fromTo(
         detailRef.current,
-        { x: 400 },
+        { x: detailRef.current.offsetWidth },
         { x: 0, duration: 0.5, ease: "power3.out" }
       );
     }
@@ -240,6 +240,7 @@ export default function CategoryExplorer() {
       {activeGender && (
         <div
           ref={drawerRef}
+          className="category-product-drawer"
           style={{
             position: "absolute",
             bottom: 0,
@@ -314,7 +315,8 @@ export default function CategoryExplorer() {
                   flexDirection: "column",
                 }}
               >
-                <div
+                  <div
+                    className="drawer-product-image"
                   style={{
                     width: "220px",
                     aspectRatio: "3/4",
@@ -364,6 +366,7 @@ export default function CategoryExplorer() {
       {selectedProduct && (
         <div
           ref={detailRef}
+          className="category-product-quickview"
           style={{
             position: "fixed",
             top: 0,

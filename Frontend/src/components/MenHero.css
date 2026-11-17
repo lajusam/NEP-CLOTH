@@ -172,6 +172,21 @@
   margin-top: 0.6cqw;
 }
 
+@media (max-width: 767px) {
+  .men-hero-wrapper {
+    aspect-ratio: auto;
+    height: min(78svh, 680px);
+    min-height: 440px;
+  }
+
+  .men-hero-img { object-position: 56% center; }
+  .men-hero-text-block { left: 5%; top: 48%; width: 90%; }
+  .men-hero-line { line-height: 1.12; }
+  .men-hero-line-1 { font-size: clamp(15px, 4.5vw, 22px); }
+  .men-hero-line-2 { font-size: clamp(23px, 7vw, 38px); }
+  .men-hero-line-3 { font-size: clamp(14px, 4vw, 20px); }
+}
+
 /* ── 6. ACCESSIBILITY: PREFERS REDUCED MOTION ────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .men-hero-img {

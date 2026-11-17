@@ -250,6 +250,67 @@
   }
 }
 
+@media (max-width: 767px) {
+  .collection-editorial-page > #products > .collection-state {
+    height: auto;
+    min-height: calc(100svh - var(--nav-height));
+    padding: 72px 20px;
+  }
+
+  .collection-editorial-page > #products .product-grid-editorial {
+    height: auto;
+    min-height: calc(100svh - var(--nav-height));
+    padding-block: 48px 32px;
+    overflow: visible;
+  }
+
+  .collection-editorial-page > #products .product-grid-editorial-content { height: auto; }
+  .collection-editorial-page > #products .product-grid-editorial .product-carousel-track {
+    flex: 0 0 auto;
+    min-height: 0;
+    padding-block: 16px 8px;
+  }
+
+  .collection-editorial-page > #products .product-grid-editorial .carousel-card {
+    width: min(70vw, 280px);
+  }
+
+  .collection-editorial-page > #products .product-grid-editorial .product-tile-image {
+    flex: 0 0 auto;
+    aspect-ratio: 4 / 5 !important;
+  }
+
+  .collection-editorial-page .editorial-story-feature,
+  .collection-editorial-page .editorial-story-lookbook,
+  .collection-editorial-page .men-editorial-outro {
+    height: auto;
+    min-height: calc(100svh - var(--nav-height));
+    padding-block: 32px;
+  }
+
+  .collection-editorial-page .editorial-story-feature-inner,
+  .collection-editorial-page .men-editorial-outro-inner {
+    height: auto;
+    grid-template-rows: auto auto;
+    gap: 20px;
+  }
+
+  .collection-editorial-page .editorial-story-photo-column,
+  .collection-editorial-page .men-editorial-outro-photo {
+    width: min(100%, 360px);
+    height: auto;
+    max-height: none;
+    aspect-ratio: 4 / 5;
+  }
+
+  .collection-editorial-page .editorial-story-lookbook-inner { height: auto; }
+  .collection-editorial-page .editorial-story-lookbook-grid { min-height: 0; }
+  .collection-editorial-page .editorial-story-lookbook-item .editorial-story-image-frame {
+    max-height: none;
+    aspect-ratio: 4 / 5;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .collection-editorial-page .editorial-story-image-frame > img,
   .collection-editorial-page .men-editorial-outro-link,

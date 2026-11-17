@@ -19,7 +19,8 @@ export default function HomePage() {
       const heroOuter = document.getElementById("scroll-hero-outer");
       if (heroOuter) {
         const heroImg = heroOuter.querySelector(".hero-model-img");
-        if (heroImg) {
+        const useHeroParallax = !window.matchMedia("(max-width: 768px)").matches;
+        if (heroImg && useHeroParallax) {
           heroImg.style.willChange = "transform";
           gsap.to(heroImg, {
             y: 150,

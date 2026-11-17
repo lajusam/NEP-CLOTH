@@ -443,6 +443,8 @@
   .nav-fullscreen-overlay {
     flex-direction: column;
     justify-content: center;
+    background: #fff !important;
+    color: #000;
   }
 
   .desktop-menu-content {
@@ -458,11 +460,34 @@
   }
 
   .mobile-menu-links a {
-    color: #fff;
+    color: #000;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 36px;
     line-height: 1.1;
     text-decoration: none;
+    transition: color 180ms ease;
+  }
+
+  .mobile-menu-links a:hover,
+  .mobile-menu-links a:focus-visible {
+    color: #a93200;
+  }
+
+  .nav-fullscreen-overlay > button {
+    color: #000 !important;
+  }
+
+  .mobile-menu-account a:not(.text-altitude-orange),
+  .mobile-menu-account button {
+    color: #000 !important;
+  }
+
+  .mobile-menu-account a.text-altitude-orange {
+    color: #a93200 !important;
+  }
+
+  .mobile-menu-account > span {
+    color: #777 !important;
   }
 
   .mobile-menu-links a:focus-visible,
@@ -483,10 +508,24 @@
 }
 
 @media (max-width: 767px) {
-  :root { --nav-height: 56px; }
-  .site-navbar-inner { gap: 8px; }
-  .site-navbar-right { gap: 4px; }
-  .site-navbar-brand a { font-size: 24px; }
+  :root { --nav-height: 64px; }
+  .site-navbar-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+  .site-navbar-brand {
+    grid-column: 1;
+    justify-self: start;
+    text-align: left;
+  }
+  .site-navbar-right {
+    grid-column: 2;
+    gap: 2px;
+  }
+  .site-navbar-brand a {
+    font-size: clamp(19px, 6vw, 24px);
+    word-spacing: 0.1em;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1145,34 +1184,160 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .hero-wordmark-text {
-    font-size: calc(clamp(60px, 22vw, 200px) * var(--hero-wordmark-scale));
+    font-size: calc(clamp(40px, 27vw, 118px) * var(--hero-wordmark-scale));
+    letter-spacing: -0.02em;
+  }
+
+  .hero-wordmark {
+    justify-content: space-evenly;
+    gap: 0;
+    padding-inline: 8px;
+  }
+
+  .hero-wordmark-nep {
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .hero-wordmark-cloth {
+    margin-left: 0;
+    padding-left: 0;
+    position: relative;
+    left: clamp(10px, 4vw, 16px);
+  }
+
+  .marquee-strip {
+    padding-block: 8px;
+  }
+
+  .marquee-strip .marquee-text {
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+  }
+
+  .marquee-strip .px-8 {
+    padding-inline: 1rem;
+  }
+
+  .hero-section {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 2 / 1;
+  }
+
+  .hero-model-img {
+    inset: 0;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .hero-eyebrow {
-    top: 100px;
-    left: 24px;
+    top: 8px;
+    left: 8px;
+    text-align: left;
   }
 
-  .hero-buttons {
-    bottom: 32px;
-    left: 24px;
-    flex-direction: column;
-    gap: 8px;
+  .hero-eyebrow p {
+    font-size: 7px;
+    line-height: 1.25;
+    letter-spacing: 0.16em;
   }
 
-  .hero-btn {
-    font-size: 10px;
-    padding: 10px 16px;
-    text-align: center;
+  .hero-eyebrow-rule {
+    width: 34px;
+    margin-top: 4px;
   }
 
   .hero-collection-label {
-    display: none;
+    display: block;
+    right: 8px;
+    bottom: 18px;
+    text-align: right;
+  }
+
+  .hero-buttons {
+    right: auto;
+    bottom: 18px;
+    left: 8px;
+    gap: 4px;
+  }
+
+  .hero-btn {
+    flex: 0 0 auto;
+    min-height: 26px;
+    font-size: 6px;
+    line-height: 1;
+    letter-spacing: 0.12em;
+    padding: 6px 7px;
+    text-align: center;
   }
 
   .hero-scroll-indicator {
-    bottom: 24px;
+    display: flex;
+    bottom: 2px;
+    gap: 2px;
   }
+
+  .hero-collection-label p { font-size: 7px; line-height: 1.25; letter-spacing: 0.16em; }
+  .hero-scroll-indicator span { font-size: 5px; }
+  .hero-scroll-track {
+    height: 7px;
+  }
+}
+
+@media (max-width: 380px) {
+  .marquee-strip .marquee-text {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+
+  .marquee-strip .px-8 {
+    padding-inline: 0.75rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .product-detail-gallery { padding-top: 12px; }
+  .product-detail-info { padding: 20px 16px 36px; }
+  .pdp-product-title { font-size: clamp(40px, 12vw, 56px) !important; }
+  .pdp-story { width: 100% !important; height: auto !important; min-height: 0; flex-direction: column; }
+  .pdp-story-copy { padding: 40px 20px 28px !important; }
+  .pdp-story-copy h2 { font-size: clamp(42px, 13vw, 64px) !important; }
+  .pdp-story-image { height: 68svh; min-height: 68svh; flex: 0 0 auto !important; }
+  .pdp-related { padding: 56px 16px !important; }
+  .pdp-related h2 { font-size: clamp(38px, 11vw, 56px) !important; margin-bottom: 24px !important; }
+  .pdp-related .related-card { width: min(72vw, 240px) !important; }
+  .pdp-related .related-track { gap: 14px !important; }
+  .mobile-menu-links { padding: 24px 20px; gap: 10px; }
+  .mobile-menu-links a { font-size: clamp(32px, 10vw, 40px); }
+  .nav-icon-button,
+  .nav-menu-trigger,
+  .account-trigger { min-width: 44px; height: 44px; }
+  .nav-menu-trigger .material-symbols-outlined { font-size: 27px; }
+  .nav-fullscreen-overlay { height: 100dvh; min-height: 100svh; }
+  .nav-fullscreen-overlay > button {
+    top: max(12px, env(safe-area-inset-top)) !important;
+    right: 14px !important;
+    min-height: 44px;
+    padding-inline: 10px;
+  }
+  .mobile-menu-account {
+    bottom: max(16px, env(safe-area-inset-bottom)) !important;
+    left: 20px !important;
+    right: 20px !important;
+    gap: 12px !important;
+  }
+  .category-product-drawer { height: min(70svh, 420px) !important; }
+  .category-product-drawer > div:nth-of-type(2) { padding-inline: 16px !important; }
+  .category-product-drawer .drawer-product-card { width: min(62vw, 220px) !important; }
+  .category-product-drawer .drawer-product-image { width: 100% !important; }
+  .category-product-quickview { width: 100vw !important; height: 100svh !important; }
+  .category-product-quickview > div:first-child { aspect-ratio: 4 / 5 !important; max-height: 48svh; }
+  .category-product-quickview > div:nth-of-type(2) { padding: 20px !important; }
+  .container-page { padding-inline: 16px; }
+  input, select, textarea { max-width: 100%; }
 }
 
 /* ── Reduced motion fallback ── */
